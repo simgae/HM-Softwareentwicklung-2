@@ -1,0 +1,7 @@
+out/
+lib/
+**/*.class
+generated/
+**/.DS-Store
+.idea/
+**/*.iml
