@@ -1,4 +1,3 @@
-import edu.hm.cs.rs.se.ss23.a07.MinnieBooker; // X
 import edu.hm.cs.rs.se.ss23.a08.Just6;
 import edu.hm.cs.rs.se.ss23.a08.Only5;
 import edu.hm.cs.rs.se.ss23.a08.Player;
@@ -13,6 +12,7 @@ public class MinnieUndercut {
      * @param args Kommandozeilenargumente: keine.
      */
     public static void main(String... args) {
+        // TODO - Verwenden Sie hier Ihren eigenen Buchhalter
         final Undercut undercut = new Undercut(new MinnieBooker());
         final Player winner = undercut.run(new Only5(), new Just6());
         System.out.println("the winner is: " + winner);
