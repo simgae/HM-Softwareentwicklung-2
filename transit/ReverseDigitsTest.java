@@ -3,7 +3,7 @@ import org.junit.Test;
 
 /** Praktikum SE2, SS2023 (Schiedermeier).
  * Tests zur Probeaufgabe.
- * @version 2023-03-17
+ * @version 2023-03-18
  */
 // @Xmark("a00")
 public class ReverseDigitsTest {

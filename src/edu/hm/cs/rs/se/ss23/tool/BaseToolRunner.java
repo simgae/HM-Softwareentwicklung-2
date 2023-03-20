@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 
 /** Aufruf der Werkzeuge, alle nacheinander.
  * @author Reinhard Schiedermeier, rs@cs.hm.edu
- * @version 2023-03-16
+ * @version 2023-03-19
  */
 @SuppressWarnings({"PMD.NPathComplexity", // bug im PMD 6.55 => Integer.MAX_VALUE
         "checkstyle:DescendantToken"}) // Pfade unabhaengig, kein Zusammenfassen moeglich

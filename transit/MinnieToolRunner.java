@@ -2,7 +2,7 @@ import java.io.IOException;
 
 /** Beispielprogramm zum Start der Werkzeugkette.
  * Praktikum SE2, SS2023 (Schiedermeier).
- * @version 2023-03-17
+ * @version 2023-03-19
  */
 public class MinnieToolRunner extends BaseToolRunner {
     @Override public String projectDir() {
