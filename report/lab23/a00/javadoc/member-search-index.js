@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"edu.hm.gaertner.simon.lab23.a00","c":"ReverseDigits","l":"main(String...)","u":"main(java.lang.String...)"},{"p":"edu.hm.gaertner.simon.lab23.a00","c":"ReverseDigits","l":"ReverseDigits()","u":"%3Cinit%3E()"}];updateSearchResults();

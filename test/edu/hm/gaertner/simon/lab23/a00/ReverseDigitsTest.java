@@ -1,3 +1,5 @@
+package edu.hm.gaertner.simon.lab23.a00;
+
 import edu.hm.cs.rs.se.ss23.common.CaptureSystemOut;
 import org.junit.Test;
 

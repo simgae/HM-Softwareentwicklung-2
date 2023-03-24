@@ -1,16 +1,19 @@
+package edu.hm.gaertner.simon.lab23.runner;
+import edu.hm.cs.rs.se.ss23.tool.BaseToolRunner;
+
 import java.io.IOException;
 
 /** Beispielprogramm zum Start der Werkzeugkette.
  * Praktikum SE2, SS2023 (Schiedermeier).
  * @version 2023-03-19
  */
-public class MinnieToolRunner extends BaseToolRunner {
+public class ToolRunner extends BaseToolRunner {
     @Override public String projectDir() {
-        return "c:\\Users\\Me\\IdeaProjects\\Lab"; // TODO - anpassen
+        return "C:\\Users\\simon\\OneDrive\\Desktop\\SE2\\sgaertne";
     }
 
     @Override public String toolBundleDir() {
-        return "c:\\Users\\Me\\Downloads\\tool-bundle"; // TODO - anpassen
+        return "C:\\Users\\simon\\OneDrive\\Desktop\\SE2\\tool";
     }
 
     /** Hauptprogramm.
@@ -20,6 +23,6 @@ public class MinnieToolRunner extends BaseToolRunner {
      * @throws IOException wenn der Zugriff aufs Filesystem scheitert.
      */
     public static void main(String... args) throws IOException {
-        new MinnieToolRunner().runAll(args[0]);
+        new ToolRunner().runAll(args[0]);
     }
 }
