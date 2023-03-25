@@ -4,7 +4,7 @@ import edu.hm.cs.rs.se.ss23.a08.Player;
 import edu.hm.cs.rs.se.ss23.a08.Undercut;
 
 /** Moderator des Spieles Undercut.
- * @version 2023-03-18
+ * @version 2023-03-20
  */
 public class MinnieUndercut {
     /** Hauptprogramm.

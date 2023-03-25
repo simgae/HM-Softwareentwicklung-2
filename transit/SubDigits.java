@@ -1,6 +1,6 @@
-/** Praktikum SE2, SS2023 (Schiedermeier).
- * Loesung zur Aufgabe 01.
- * @version 2023-03-18
+/** Vorgabe zur Aufgabe.
+ * Praktikum SE2, SS2023 (Schiedermeier).
+ * @version 2023-03-22
  */
 public class SubDigits {
     /** Hauptprogramm.

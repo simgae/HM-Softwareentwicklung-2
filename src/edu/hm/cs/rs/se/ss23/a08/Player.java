@@ -1,8 +1,9 @@
 package edu.hm.cs.rs.se.ss23.a08;
 
 /** Ein Undercut-Spieler.
+ * Praktikum SE2, SS2023 (Schiedermeier).
  * @author R. Schiedermeier, rs@cs.hm.edu
- * @version 2023-03-17
+ * @version 2023-03-22
  */
 public interface Player {
     /** Welche Augenzahl der Spieler in diesem Zug nach oben dreht.

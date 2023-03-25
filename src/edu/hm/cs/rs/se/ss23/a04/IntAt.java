@@ -1,9 +1,9 @@
 package edu.hm.cs.rs.se.ss23.a04;
 
-/** Praktikum SE2, SS2023 (R. Schiedermeier).
- * Vorgabe zur Aufgabe 04.
+/** Interface fuer Funktionen, die den Wert an einem Index berechnen.
+ * Praktikum SE2, SS2023 (Schiedermeier).
  * @author R. Schiedermeier, rs@cs.hm.edu
- * @version 2023-03-17
+ * @version 2023-03-22
  */
 @FunctionalInterface public interface IntAt {
     /** {@return Wert des Elementes am gegebenen Index.}

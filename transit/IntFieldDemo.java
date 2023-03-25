@@ -1,5 +1,5 @@
-/** Operator, der die natuerlichen Zahlen liefert.
- * @version 2023-03-17
+/** Funktion, der die natuerlichen Zahlen liefert.
+ * @version 2023-03-22
  */
 record Naturals() implements IntAt {
     /** {@return Ein natuerliche Zahl.}
@@ -8,9 +8,8 @@ record Naturals() implements IntAt {
     @Override public int value(int index) {return index + 1;}
 }
 
-/** Praktikum SE2, SS2023 (Schiedermeier).
- * Demoprogramm zur Aufgabe a04.
- * @version 2023-03-17
+/** Demoprogramm.
+ * Praktikum SE2, SS2023 (Schiedermeier).
  */
 public class IntFieldDemo {
     public static void main(String... args) {

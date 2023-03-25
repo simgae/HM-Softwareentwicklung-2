@@ -1,9 +1,9 @@
 package edu.hm.cs.rs.se.ss23.a06;
 
-/** Praktikum SE2, SS2023 (R. Schiedermeier).
- * Vorgabe zur Aufgabe 04.
+/** Berechnet den Wert eines Feldelementes auf dem Index.=
+ * Praktikum SE2, SS2023 (Schiedermeier).
  * @author R. Schiedermeier, rs@cs.hm.edu
- * @version 2023-03-17
+ * @version 2023-03-22
  * @param <T> Elementtyp.
  */
 @FunctionalInterface public interface At<T> {
