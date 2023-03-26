@@ -1,8 +1,12 @@
+package edu.hm.gaertner.simon.lab23.a11;
+
 import static org.junit.Assert.assertEquals;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
+
+import java.util.NoSuchElementException;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -128,4 +132,34 @@ public class MostFrequentTest {
         assertEquals(want, have);
     }
 
+    @Test(expected = IllegalArgumentException.class) public void newObjectWithOccurrenceLessThan1(){
+        final MostFrequent have = new MostFrequent(0, 0);
+    }
+
+    @Test(expected = NullPointerException.class) public void scanWithNullArray(){
+        final MostFrequent have = MostFrequent.scan(null);
+    }
+
+    @Test(expected = NoSuchElementException.class) public void scanWithArrayLength0(){
+        final int[] array = new int[0];
+        final MostFrequent have = MostFrequent.scan(array);
+    }
+
+    /*
+    Tests works - you have to change access parameter of method from private to public
+    Commented out because, ToolRunner can not activate asserts! -> This also leads to
+    survived PIT mutation in the method postConditionsForScanMethod()!
+
+    @Test(expected = AssertionError.class) public void checkPostConditionsWrongValue(){
+        final int[] array = {1};
+        final MostFrequent mostFrequentSoFar = new MostFrequent(0, 1);
+        MostFrequent.postConditionsForScanMethod(mostFrequentSoFar, array);
+    }
+
+    @Test(expected = AssertionError.class) public void checkPostConditionsWrongOccurrence(){
+        final int[] array = {0};
+        final MostFrequent mostFrequentSoFar = new MostFrequent(0, 2);
+        MostFrequent.postConditionsForScanMethod(mostFrequentSoFar, array);
+    }
+    */
 }

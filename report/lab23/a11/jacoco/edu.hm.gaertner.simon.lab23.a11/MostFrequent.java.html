@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MostFrequent.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">edu.hm.gaertner.simon.lab23.a11</a> &gt; <span class="el_source">MostFrequent.java</span></div><h1>MostFrequent.java</h1><pre class="source lang-java linenums">package edu.hm.gaertner.simon.lab23.a11;
+
+import java.util.NoSuchElementException;
+import java.util.Objects;
+
+/** Element in einem int-Array und Anzahl der Vorkommen.
+ * Praktikum SE2, SS2023 (Schiedermeier).
+ * @version 2023-03-22
+ * @param value Wert des Elementes.
+ * @param occurrences Anzahl Vorkommen. Wenigstens 1.
+ */
+<span class="fc" id="L12">public record MostFrequent(int value, int occurrences) {</span>
+
+    /** Ctor with precondition - check occurrences.
+     * @param value of the element
+     * @param occurrences of the element
+     * @throws IllegalArgumentException when occurrences is less than 1
+     */
+<span class="fc" id="L19">    public MostFrequent {</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (occurrences &lt; 1)</span>
+<span class="fc" id="L21">            throw new IllegalArgumentException(&quot;Occurrences of the new object is less then 1.&quot;);</span>
+<span class="fc" id="L22">    }</span>
+
+
+    /** Sucht in einem int-Array nach dem Element, das am oeftesten vorkommt.
+     * Wenn es mehrere Kandidaten gibt, gilt der erste.
+     * @param array Ein Array.
+     * @return Haeufigstes Element. Nicht null.
+     * @throws NullPointerException wenn das Array nicht existiert (null ist).
+     * @throws NoSuchElementException wenn das Array leer ist.
+     */
+    public static MostFrequent scan(int... array) {
+
+        // Precondition - check that array is not null
+<span class="fc" id="L35">        Objects.requireNonNull(array);</span>
+
+        // Precondition - check that length of array is not 0
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        if(array.length == 0)</span>
+<span class="fc" id="L39">            throw new NoSuchElementException(&quot;Length of transferred Array is 0!&quot;);</span>
+
+<span class="fc" id="L41">        MostFrequent mostFrequentSoFar = null;</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        for(int currentValue : array) {</span>
+<span class="fc" id="L43">            int currentFound = 0;</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            for(int comparedValue : array)</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">                if(comparedValue == currentValue)</span>
+<span class="fc" id="L46">                    currentFound++;</span>
+<span class="fc bfc" id="L47" title="All 4 branches covered.">            if(mostFrequentSoFar == null || currentFound &gt; mostFrequentSoFar.occurrences())</span>
+<span class="fc" id="L48">                mostFrequentSoFar = new MostFrequent(currentValue, currentFound);</span>
+        }
+
+<span class="fc" id="L51">        postConditionsForScanMethod(mostFrequentSoFar, array.clone());</span>
+
+<span class="fc" id="L53">        return mostFrequentSoFar;</span>
+    }
+
+    /**
+     * Check the result of scan method.
+     * @param mostFrequentSoFar object which should be checked
+     * @param array underlying array
+     */
+    public static void postConditionsForScanMethod(MostFrequent mostFrequentSoFar, int... array){
+        // Post-Condition - check that value is part of the array
+<span class="fc" id="L63">        boolean isPart = false;</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        for (int currentElement : array) {</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">            if(currentElement == mostFrequentSoFar.value())</span>
+<span class="fc" id="L66">                isPart = true;</span>
+        }
+
+<span class="pc bnc" id="L69" title="All 2 branches missed.">        assert isPart : &quot;Value of return object is not part of the array!&quot;;</span>
+
+        // Post-Conditions - check that occurrence of value is right
+<span class="fc" id="L72">        int amount = 0;</span>
+
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        for (int currentElement : array) {</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">            if(currentElement == mostFrequentSoFar.value())</span>
+<span class="fc" id="L76">                amount++;</span>
+        }
+
+<span class="pc bnc" id="L79" title="All 2 branches missed.">        assert amount == mostFrequentSoFar.occurrences() : &quot;Calculation of occurrences is wrong!&quot;;</span>
+<span class="fc" id="L80">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
