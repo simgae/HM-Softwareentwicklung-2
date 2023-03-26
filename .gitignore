@@ -5,5 +5,3 @@ generated/
 **/.DS-Store
 .idea/
 **/*.iml
-src/edu/hm/gaertner/simon/lab23/runner/ToolRunner.java
-src/edu/hm/cs/rs/se/ss23/tool/BaseToolRunner.java
