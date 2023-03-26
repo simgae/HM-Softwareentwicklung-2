@@ -1,5 +1,6 @@
 package edu.hm.gaertner.simon.lab23.a11;
 
+import edu.hm.cs.rs.se.ss23.Xmark;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Objects;
@@ -10,6 +11,7 @@ import java.util.Objects;
  * @param value Wert des Elementes.
  * @param occurrences Anzahl Vorkommen. Wenigstens 1.
  */
+@Xmark("a11")
 public record MostFrequent(int value, int occurrences) {
 
     /** Ctor with precondition - check occurrences.
