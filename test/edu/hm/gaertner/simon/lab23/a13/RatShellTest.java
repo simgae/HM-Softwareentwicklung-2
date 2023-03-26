@@ -1,5 +1,9 @@
+package edu.hm.gaertner.simon.lab23.a13;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+
+import edu.hm.cs.rs.se.ss23.a13.CannedIO;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;

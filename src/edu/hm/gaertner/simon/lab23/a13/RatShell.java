@@ -1,3 +1,9 @@
+package edu.hm.gaertner.simon.lab23.a13;
+
+import edu.hm.cs.rs.se.ss23.a13.ConsoleIO;
+import edu.hm.cs.rs.se.ss23.a13.IO;
+import edu.hm.cs.rs.se.ss23.a13.Rational;
+
 /** Vorgabe zur Aufgabe a13.
  * Rechner fuer Brueche.
  * @version 2023-03-22
