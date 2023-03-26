@@ -117,7 +117,7 @@ public record MostFrequent(int value, int occurrences) {
             throw new NoSuchElementException("Length of transferred Array is 0!");
 
         // create array for analytics
-        int[][] arrayAnalytics = new int[uniqueLength(array)][2];
+        final int[][] arrayAnalytics = new int[uniqueLength(array)][2];
 
         // fill analytics array with -1 to initialization with 0
         // can crash when dataset contains -1 as a value
@@ -146,7 +146,7 @@ public record MostFrequent(int value, int occurrences) {
             }
         }
 
-        MostFrequent mostFrequentSoFar = new MostFrequent(arrayAnalytics[resultIndex][0], arrayAnalytics[resultIndex][1]);
+        final MostFrequent mostFrequentSoFar = new MostFrequent(arrayAnalytics[resultIndex][0], arrayAnalytics[resultIndex][1]);
 
         // factored out because of cyclomatic complexity
         postConditionsForScanMethod(mostFrequentSoFar, array.clone());
@@ -182,7 +182,7 @@ public record MostFrequent(int value, int occurrences) {
      * @param analytics array
      * @return true -> inside : false -> not inside
      */
-    private static boolean isInAnalytics (int value, int[][] analytics){
+    private static boolean isInAnalytics (int value, int[]... analytics){
         boolean result = false;
 
         for (int index = 0; index < analytics.length && !result; index++) {

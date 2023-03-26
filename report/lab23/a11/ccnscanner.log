@@ -1,6 +1,10 @@
 types
-14	edu.hm.gaertner.simon.lab23.a11.MostFrequent
+31	edu.hm.gaertner.simon.lab23.a11.MostFrequent
 methods
-2	edu.hm.gaertner.simon.lab23.a11.MostFrequent.<ctor>@19
-5	edu.hm.gaertner.simon.lab23.a11.MostFrequent.postConditionsForScanMethod@61
+2	edu.hm.gaertner.simon.lab23.a11.MostFrequent.<ctor>@20
+3	edu.hm.gaertner.simon.lab23.a11.MostFrequent.countValue@202
+4	edu.hm.gaertner.simon.lab23.a11.MostFrequent.isInAnalytics@185
+5	edu.hm.gaertner.simon.lab23.a11.MostFrequent.postConditionsForScanMethod@62
+7	edu.hm.gaertner.simon.lab23.a11.MostFrequent.reworkScan@110
 7	edu.hm.gaertner.simon.lab23.a11.MostFrequent.scan@32
+3	edu.hm.gaertner.simon.lab23.a11.MostFrequent.uniqueLength@162
