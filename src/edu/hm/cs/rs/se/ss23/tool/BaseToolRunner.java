@@ -120,7 +120,7 @@ public abstract class BaseToolRunner {
     private final Path jacocoStat = bin.resolve("jacoco.exec");
 
     /** Java-Version. */
-    private final int javaVersion = 19;
+    private final int javaVersion = 18;
 
     /** Trennzeile fuer die Ausgabe. */
     private final String splitter = "-".repeat(80);
