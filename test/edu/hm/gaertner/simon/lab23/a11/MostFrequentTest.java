@@ -1,7 +1,6 @@
 package edu.hm.gaertner.simon.lab23.a11;
 
 import static org.junit.Assert.assertEquals;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -24,7 +23,7 @@ public class MostFrequentTest {
         final int[] array = {1};
 
         // act
-        final MostFrequent have = MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.reworkScan(array);
 
         // assert
         assertEquals(want, have);
@@ -36,7 +35,7 @@ public class MostFrequentTest {
         final int[] array = {1, 2, 3};
 
         // act
-        final MostFrequent have = MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.reworkScan(array);
 
         // assert
         assertEquals(want, have);
@@ -48,7 +47,7 @@ public class MostFrequentTest {
         final int[] array = {1, 1, 2, 2};
 
         // act
-        final MostFrequent have = MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.reworkScan(array);
 
         // assert
         assertEquals(want, have);
@@ -60,7 +59,7 @@ public class MostFrequentTest {
         final int[] array = {1, 1, 2};
 
         // act
-        final MostFrequent have = MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.reworkScan(array);
 
         // assert
         assertEquals(want, have);
@@ -72,7 +71,7 @@ public class MostFrequentTest {
         final int[] array = {2, 1, 1};
 
         // act
-        final MostFrequent have = MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.reworkScan(array);
 
         // assert
         assertEquals(want, have);
@@ -84,7 +83,7 @@ public class MostFrequentTest {
         final int[] array = {2, 1, 1, 3};
 
         // act
-        final MostFrequent have = MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.reworkScan(array);
 
         // assert
         assertEquals(want, have);
@@ -97,26 +96,26 @@ public class MostFrequentTest {
         final int[] array = new int[zeroes];
 
         // act
-        final MostFrequent have = MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.reworkScan(array);
 
         // assert
         assertEquals(want, have);
     }
 
-    @Ignore @Test public void tooSlow() {
+    @Test public void tooSlow() {
         // arrange
         final int zeroes = 1_000_000;
         final MostFrequent want = new MostFrequent(0, zeroes);
         final int[] array = new int[zeroes];
 
         // act
-        final MostFrequent have = MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.reworkScan(array);
 
         // assert
         assertEquals(want, have);
     }
 
-    @Ignore @Test public void interleaved() {
+    @Test public void interleaved() {
         // arrange
         final int zeroes = 1_000_000;
         final MostFrequent want = new MostFrequent(0, zeroes);
@@ -126,7 +125,7 @@ public class MostFrequentTest {
                 .toArray();
 
         // act
-        final MostFrequent have = MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.reworkScan(array);
 
         // assert
         assertEquals(want, have);
