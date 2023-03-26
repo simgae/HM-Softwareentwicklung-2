@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"edu.hm.gaertner.simon.lab23.a12","c":"Zeroes","l":"count0(int...)"},{"p":"edu.hm.gaertner.simon.lab23.a12","c":"Zeroes","l":"Zeroes()","u":"%3Cinit%3E()"}];updateSearchResults();

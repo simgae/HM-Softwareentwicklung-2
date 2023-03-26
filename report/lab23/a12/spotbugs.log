@@ -1,0 +1,1 @@
+edu/hm/gaertner/simon/lab23/a12/Zeroes.java:20:20 DLS: Dead store to $L6 in edu.hm.gaertner.simon.lab23.a12.Zeroes.count0(int[]) (L) 
