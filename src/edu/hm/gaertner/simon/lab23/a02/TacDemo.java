@@ -1,3 +1,5 @@
+package edu.hm.gaertner.simon.lab23.a02;
+
 /** Demoprogramm. Gehoert nicht zur Loesung.
  * Praktikum SE2, SS2023 (Schiedermeier).
  * @version 2023-03-22
