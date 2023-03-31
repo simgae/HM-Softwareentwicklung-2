@@ -1,3 +1,8 @@
+package edu.hm.gaertner.simon.lab23.a04;
+
+import edu.hm.cs.rs.se.ss23.a04.IntAt;
+import edu.hm.cs.rs.se.ss23.a04.IntField;
+
 /** Funktion, der die natuerlichen Zahlen liefert.
  * @version 2023-03-22
  */
@@ -15,17 +20,19 @@ public class IntFieldDemo {
     public static void main(String... args) {
         IntField c = new ConstantIntField(10, 1);
         System.out.println(c.at(5)); // 1
-        System.out.println(c.at(10)); // IndexOutOfBoundsException
-
+        // System.out.println(c.at(10)); // IndexOutOfBoundsException
+        System.out.println("---------------------------");
         IntField a = new AtIntField(c, 2, 2);
         System.out.println(a.at(1)); // 1
         System.out.println(a.at(2)); // 2
         System.out.println(a.at(3)); // 1
+        System.out.println("---------------------------");
 
         IntField r = new ReverseIntField(a);
         System.out.println(r.at(8)); // 1
         System.out.println(r.at(7)); // 2
         System.out.println(a.at(7)); // 1, weil a immutable ist
+        System.out.println("---------------------------");
 
         IntField cp = new ComputedIntField(new Naturals(), 10);
         System.out.println(cp.at(0)); // 1
