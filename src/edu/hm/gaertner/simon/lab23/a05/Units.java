@@ -1,6 +1,10 @@
 package edu.hm.gaertner.simon.lab23.a05;
 @SuppressWarnings({"PMD.FieldNamingConventions",
         "checkstyle:JavadocVariable"})
+/**
+ * Enum class for different units.
+ * Also contains a method to recalculate a unit into another unit.
+ */
 public enum Units {
     MM,
     M,
@@ -9,6 +13,12 @@ public enum Units {
     CM,
     FT;
 
+    /**
+     * Recalculation method.
+     * @param targetUnit new unit - one of the enum values
+     * @param oldAmount which should be recalculated
+     * @return new amount in the new unit
+     */
     public double recalculate(Units targetUnit, double oldAmount){
         return switch (this) {
             case M -> switch (targetUnit) {
