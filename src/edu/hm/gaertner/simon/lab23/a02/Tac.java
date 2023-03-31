@@ -1,7 +1,22 @@
 package edu.hm.gaertner.simon.lab23.a02;
 
+import edu.hm.cs.rs.se.ss23.Xmark;
+
 import java.util.Objects;
 
+/**
+ * Tac class.
+ * Main method gets a string with multiple lines and print it reversed.
+ * Start
+ * Middle
+ * End
+ * ----
+ * End
+ * Middle
+ * Start
+ */
+
+@Xmark("a02")
 public class Tac {
     public static void main(String string) {
 

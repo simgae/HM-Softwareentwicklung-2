@@ -1,5 +1,13 @@
 package edu.hm.gaertner.simon.lab23.a03;
 
+import edu.hm.cs.rs.se.ss23.Xmark;
+
+/**
+ * Distance record.
+ * @param amount of units
+ * @param unit -> km, m, mm
+ */
+@Xmark("a03")
 public record Distance(int amount, String unit) {
 
     /**

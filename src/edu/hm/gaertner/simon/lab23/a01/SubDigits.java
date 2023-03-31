@@ -1,9 +1,12 @@
 package edu.hm.gaertner.simon.lab23.a01;
 
+import edu.hm.cs.rs.se.ss23.Xmark;
+
 /** Vorgabe zur Aufgabe.
  * Praktikum SE2, SS2023 (Schiedermeier).
  * @version 2023-03-22
  */
+@Xmark("a01")
 public class SubDigits {
     /** Hauptprogramm.
      * Sucht die Dezimaldarstellung einer Zahl in einer anderen.
