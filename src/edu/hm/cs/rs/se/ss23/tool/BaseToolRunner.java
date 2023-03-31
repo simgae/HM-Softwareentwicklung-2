@@ -123,8 +123,8 @@ public abstract class BaseToolRunner {
      * Added a second java version for different run configurations for different PCs.
      * Changes by: Simon Gaertner, sgaertne@hm.edu
      */
-    // private final int javaVersion = 18;
-    private final int javaVersion = 19;
+     private final int javaVersion = 18;
+    // private final int javaVersion = 19;
 
     /** Trennzeile fuer die Ausgabe. */
     private final String splitter = "-".repeat(80);
