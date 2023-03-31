@@ -5,10 +5,10 @@ import edu.hm.cs.rs.se.ss23.Xmark;
 /**
  * Distance record.
  * @param amount of units
- * @param unit -> km, m, mm
+ * @param unit -> km, m, mm -> defined in enum Units
  */
 @Xmark("a03")
-public record BetterDistance(int amount, Units unit) {
+public record BetterDistance(double amount, Units unit) {
 
     /**
      * Ctor.
@@ -26,24 +26,8 @@ public record BetterDistance(int amount, Units unit) {
      * @return new amount in the new unit
      * @throws IllegalStateException when any unit parameter is wrong.
      */
-    public int as(Units unit){
-        return switch (this.unit()) {
-            case M -> switch (unit) {
-                case MM -> this.amount() * 100 * 10;
-                case M  -> this.amount();
-                case KM -> this.amount() / 1000;
-            };
-            case MM -> switch (unit) {
-                case MM -> this.amount();
-                case M -> this.amount() / 10 / 100;
-                case KM -> this.amount() / 10 / 100 / 1000;
-            };
-            case KM -> switch (unit) {
-                case MM -> this.amount() * 1000 * 100 * 10;
-                case M -> this.amount() * 1000;
-                case KM -> this.amount();
-            };
-        };
+    public double as(Units unit){
+        return unit().recalculate(unit, amount());
     }
 
     /**
@@ -52,7 +36,7 @@ public record BetterDistance(int amount, Units unit) {
      * @return true when correct otherwise false
      */
     public boolean more (BetterDistance that){
-        final int distanceThat = that.as(this.unit());
+        final double distanceThat = that.as(this.unit());
 
         return this.amount() > distanceThat;
     }
@@ -63,9 +47,9 @@ public record BetterDistance(int amount, Units unit) {
      * @return new object with added distance and unit of this
      */
     public BetterDistance add(BetterDistance that){
-        final int distanceThat = that.as(this.unit());
+        final double distanceThat = that.as(this.unit());
 
-        final int newDistance = distanceThat + this.amount();
+        final double newDistance = distanceThat + this.amount();
 
         return new BetterDistance(newDistance, this.unit());
     }
@@ -75,7 +59,7 @@ public record BetterDistance(int amount, Units unit) {
      * @param amount parameter
      * @throws IllegalArgumentException when unit parameter is negative
      */
-    private void checkAmount (int amount){
+    private void checkAmount (double amount){
         if(amount < 0)
             throw new IllegalArgumentException("Negative amount!");
     }
@@ -88,6 +72,8 @@ public record BetterDistance(int amount, Units unit) {
         System.out.println(new BetterDistance(123_456, Units.M).as(Units.KM));
         System.out.println(new BetterDistance(123_456, Units.M).more(new BetterDistance(123, Units.KM)));
         System.out.println(new BetterDistance(123_456, Units.MM).add(new BetterDistance(123, Units.M)).amount());
+        System.out.println(new BetterDistance(1, Units.MI).as(Units.M));
+        System.out.println(new BetterDistance(1, Units.FT).as(Units.CM));
     }
 
 
