@@ -7,7 +7,6 @@ import edu.hm.cs.rs.se.ss23.Xmark;
  * @param amount of units
  * @param unit -> km, m, mm
  */
-@Xmark("a03")
 public record Distance(int amount, String unit) {
 
     /**

@@ -6,7 +6,6 @@ import edu.hm.cs.rs.se.ss23.Xmark;
  * Loesung zur Probeaufgabe.
  * @version 2023-03-18
  */
-@Xmark("a00")
 public class ReverseDigits {
     /** Hauptprogramm.
      * Gibt eine Zahl in umgedrehter Dezimalschreibweise aus.

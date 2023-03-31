@@ -6,7 +6,6 @@ import edu.hm.cs.rs.se.ss23.Xmark;
  * Praktikum SE2, SS2023 (Schiedermeier).
  * @version 2023-03-22
  */
-@Xmark("a01")
 public class SubDigits {
     /** Hauptprogramm.
      * Sucht die Dezimaldarstellung einer Zahl in einer anderen.

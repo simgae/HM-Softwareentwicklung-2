@@ -16,7 +16,6 @@ import java.util.Objects;
  * Start
  */
 
-@Xmark("a02")
 public class Tac {
     public static void main(String string) {
 
