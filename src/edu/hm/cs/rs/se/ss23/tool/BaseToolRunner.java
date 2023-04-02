@@ -119,12 +119,8 @@ public abstract class BaseToolRunner {
     /** Pfadname des Analysefiles von Jacoco. */
     private final Path jacocoStat = bin.resolve("jacoco.exec");
 
-    /** Java-Version.
-     * Added a second java version for different run configurations for different PCs.
-     * Changes by: Simon Gaertner, sgaertne@hm.edu
-     */
-     private final int javaVersion = 18;
-    // private final int javaVersion = 19;
+    /** Java-Version. */
+    private final int javaVersion = 18;
 
     /** Trennzeile fuer die Ausgabe. */
     private final String splitter = "-".repeat(80);

@@ -10,7 +10,7 @@ public interface IO {
      */
     String read(String prompt);
 
-    /** Ausgabe eines Textes. weiter.
+    /** Ausgabe eines Textes.
      * @param text Auszugebener Text.
      */
     void write(String text);
