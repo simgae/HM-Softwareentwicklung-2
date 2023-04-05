@@ -12,7 +12,7 @@ public record RatShell(IO inout) {
      * @param args Kommandozeilenargumente: keine.
      */
     public static void main(String... args) {
-        new RatShell(new ConsoleIO()).dialogLoop();
+        new RatShell(new SystemIO()).dialogLoop();
     }
 
     /** Dialogschleife.

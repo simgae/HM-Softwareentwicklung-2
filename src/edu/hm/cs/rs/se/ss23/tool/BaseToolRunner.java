@@ -38,6 +38,11 @@ public abstract class BaseToolRunner {
         throw new UnsupportedOperationException();
     }
 
+    /** {@return Installationspfad des JDK.} */
+    public String jdkDir() {
+        return System.getProperty("java.home");
+    }
+
     /** {@return Abbildung von einzelnen Schluesseln auf Pfade.} *
      */
     public Map<String, Path> mapPaths() {
@@ -120,7 +125,7 @@ public abstract class BaseToolRunner {
     private final Path jacocoStat = bin.resolve("jacoco.exec");
 
     /** Java-Version. */
-    private final int javaVersion = 18;
+    private final int javaVersion = Integer.parseInt(System.getProperty("java.version"));
 
     /** Trennzeile fuer die Ausgabe. */
     private final String splitter = "-".repeat(80);
@@ -144,7 +149,7 @@ public abstract class BaseToolRunner {
             throw new IllegalArgumentException("package substring required");
         final String subPath = subPkg.replace('.', File.separatorChar);
 
-        report =  reports.resolve(subPath);
+        report = reports.resolve(subPath);
         log = report.resolve("all.log");
         commandLog = report.resolve("command.log");
 
@@ -182,7 +187,7 @@ public abstract class BaseToolRunner {
             "-cp", collectJars(pmd.resolve("lib")),
             "net.sourceforge.pmd.PMD",
             "--encoding", "US-ASCII",
-            "--use-version", "java-19-preview",
+            "--use-version", "java-" + javaVersion + "-preview",
             "-d", findDirs(src, subPath),
             "-f", "text",
             "-R", pmdxml,
@@ -270,12 +275,13 @@ public abstract class BaseToolRunner {
         System.out.println(String.join(" ", wordList));
         Files.writeString(log, splitter + "\n[" + name + "]\n", StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         Files.write(log, List.of(String.join(" ", wordList)), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
-        Files.write(commandLog, List.of(String.join(" ", wordList.stream()
-                .map(word -> word.contains("*")? '\"' + word + '\"': word).toList())), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
-        final Process process = new ProcessBuilder(wordList)
+        Files.write(commandLog, List.of(String.join(" ", wordList.stream().map(BaseToolRunner::doubleQuote).toList())), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        final ProcessBuilder builder = new ProcessBuilder(wordList)
                 .redirectErrorStream(true)
-                .directory(new File(System.getProperty("java.io.tmpdir")))
-                .start();
+                .directory(new File(System.getProperty("java.io.tmpdir")));
+        builder.environment().put("JAVA_HOME", jdkDir());
+        builder.environment().put("PATH", Path.of(jdkDir()).resolve("bin").toString());
+        final Process process = builder.start();
         final List<String> output = new ArrayList<>();
         try(InputStream inputStream = process.getInputStream();
             Reader reader = new InputStreamReader(inputStream, Charset.defaultCharset());
@@ -294,6 +300,10 @@ public abstract class BaseToolRunner {
             Files.write(log, output, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         }
         return output;
+    }
+
+    private static String doubleQuote(String word) {
+        return word.contains("*") || word.contains(" ")? '\"' + word + '\"': word;
     }
 
     /** {@return Files unter einem Directory mit bestimmten Pfadnamen.}
