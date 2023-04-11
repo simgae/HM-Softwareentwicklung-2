@@ -124,8 +124,8 @@ public abstract class BaseToolRunner {
     /** Pfadname des Analysefiles von Jacoco. */
     private final Path jacocoStat = bin.resolve("jacoco.exec");
 
-    /** Java-Version. */
-    private final int javaVersion = Integer.parseInt(System.getProperty("java.version"));
+    /** Major-Version der laufenden Runtime. */
+    private final int javaVersion = Integer.parseInt(System.getProperty("java.version").split("\\D")[0]);
 
     /** Trennzeile fuer die Ausgabe. */
     private final String splitter = "-".repeat(80);
@@ -187,7 +187,7 @@ public abstract class BaseToolRunner {
             "-cp", collectJars(pmd.resolve("lib")),
             "net.sourceforge.pmd.PMD",
             "--encoding", "US-ASCII",
-            "--use-version", "java-" + javaVersion + "-preview",
+            // "--use-version", "java-" + javaVersion + "-preview",
             "-d", findDirs(src, subPath),
             "-f", "text",
             "-R", pmdxml,
