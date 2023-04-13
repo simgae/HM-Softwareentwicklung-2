@@ -1,0 +1,8 @@
+types
+12	edu.hm.gaertner.simon.lab23.a21.Josephus
+methods
+1	edu.hm.gaertner.simon.lab23.a21.Josephus.<ctor>@23
+3	edu.hm.gaertner.simon.lab23.a21.Josephus.checkParameters@86
+1	edu.hm.gaertner.simon.lab23.a21.Josephus.getPrisoners@96
+5	edu.hm.gaertner.simon.lab23.a21.Josephus.hailTheKing@35
+2	edu.hm.gaertner.simon.lab23.a21.Josephus.removePersonIfNecessary@74
