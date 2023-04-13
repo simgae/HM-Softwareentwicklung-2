@@ -1,0 +1,2 @@
+edu/hm/gaertner/simon/lab23/a22/TheThinLine.java:164:164 EI: edu.hm.gaertner.simon.lab23.a22.TheThinLine.getNonDefaultValues() may expose internal representation by returning TheThinLine.nonDefaultValues (M) 
+edu/hm/gaertner/simon/lab23/a22/TheThinLine.java:156:156 EI: edu.hm.gaertner.simon.lab23.a22.TheThinLine.getIndex() may expose internal representation by returning TheThinLine.index (M) 

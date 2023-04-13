@@ -1,0 +1,14 @@
+types
+20	edu.hm.gaertner.simon.lab23.a22.TheThinLine
+methods
+1	edu.hm.gaertner.simon.lab23.a22.TheThinLine.<ctor>@33
+1	edu.hm.gaertner.simon.lab23.a22.TheThinLine.<ctor>@42
+1	edu.hm.gaertner.simon.lab23.a22.TheThinLine.checkIfDefaultValue@139
+4	edu.hm.gaertner.simon.lab23.a22.TheThinLine.delete@99
+1	edu.hm.gaertner.simon.lab23.a22.TheThinLine.getDefaultValue@147
+1	edu.hm.gaertner.simon.lab23.a22.TheThinLine.getIndex@155
+1	edu.hm.gaertner.simon.lab23.a22.TheThinLine.getNonDefaultValues@163
+3	edu.hm.gaertner.simon.lab23.a22.TheThinLine.insert@64
+2	edu.hm.gaertner.simon.lab23.a22.TheThinLine.lastAt@122
+2	edu.hm.gaertner.simon.lab23.a22.TheThinLine.read@85
+3	edu.hm.gaertner.simon.lab23.a22.TheThinLine.replace@47
