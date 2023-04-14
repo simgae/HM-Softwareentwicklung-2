@@ -1,3 +1,6 @@
+package edu.hm.gaertner.simon.lab23.a23;
+
+import edu.hm.cs.rs.se.ss23.a23.Bottle;
 import edu.hm.cs.rs.se.ss23.a23.fluid.*;
 import java.util.Collection;
 import java.util.List;
@@ -14,11 +17,11 @@ public class Bottlery {
         Bottle<Drink> bd = new Bottle<>();
         Bottles.tryFill(bd, new Beer());
         Bottles.tryFill(bd, new Milk()); // schon voll, macht aber nichts
-        Bottles.tryFill(bd, new Nitro()); // Nope. Kein Treibstoff in eine Getraenkeflasche
+        // Bottles.tryFill(bd, new Nitro()); // Nope. Kein Treibstoff in eine Getraenkeflasche
         System.out.println(bd); // immer noch Bier
 
         final Drink d = Bottles.tryConsume(bd);
-        final Milk m = Bottles.tryConsume(bd); // Nope. Muss keine Mlich drin sein
+        // final Milk m = Bottles.tryConsume(bd); // Nope. Muss keine Mlich drin sein
         final Fluid f = Bottles.tryConsume(bd);
         System.out.println(f); // Bier
         System.out.println(Bottles.tryConsume(bd)); // nichts mehr
@@ -31,7 +34,7 @@ public class Bottlery {
         System.out.println(bf); // Milk jetzt hier
 
         final Bottle<Milk> bm = new Bottle<>();
-        Bottles.tryFill(bm, new Beer()); // Nope. Kein Bier fuer Babys!
+        // Bottles.tryFill(bm, new Beer()); // Nope. Kein Bier fuer Babys!
         Bottles.tryFill(bm, new Milk());
         Bottles.tryFill(bd, new Milk());
         Collection<Bottle<? extends Drink>> drinks = List.of(bd, bm, new Bottle<Beer>());
