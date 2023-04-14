@@ -1,0 +1,8 @@
+types
+10	edu.hm.gaertner.simon.lab23.a23.Bottles
+methods
+4	edu.hm.gaertner.simon.lab23.a23.Bottles.countWith@63
+1	edu.hm.gaertner.simon.lab23.a23.Bottles.fillOver@84
+1	edu.hm.gaertner.simon.lab23.a23.Bottles.peekInto@49
+2	edu.hm.gaertner.simon.lab23.a23.Bottles.tryConsume@33
+2	edu.hm.gaertner.simon.lab23.a23.Bottles.tryFill@20
