@@ -2,7 +2,7 @@ package edu.hm.cs.rs.se.ss23.a13;
 
 /** Vorbereiteter Dialog.
  * @author R. Schiedermeier, rs@cs.hm.edu
- * @version 2023-03-22
+ * @version 2023-03-25
  */
 public class CannedIO implements IO {
     /** Vorbereitete Eingaben. */

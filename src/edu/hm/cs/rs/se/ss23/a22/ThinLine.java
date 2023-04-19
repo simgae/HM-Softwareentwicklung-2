@@ -3,7 +3,7 @@ package edu.hm.cs.rs.se.ss23.a22;
 /** Container mit indexierten Elementen, von denen die meisten einen Defaultwert haben.
  * Praktikum SE2, SS2023 (Schiedermeier).
  * @author R. Schiedermeier, rs@cs.hm.edu
- * @version 2023-03-23
+ * @version 2023-04-03
  * @param <T> Elementtyp
  */
 public interface ThinLine<T> {

@@ -2,7 +2,7 @@ package edu.hm.cs.rs.se.ss23.a13;
 
 /** Ein gekuerzter Bruch.
  * @author R. Schiedermeier, rs@cs.hm.edu
- * @version 2023-03-22
+ * @version 2023-03-25
  * @param num Zaehler.
  * @param denom Nenner. Wenigstens 1.
  */

@@ -1,6 +1,6 @@
 /** Vorgabe zur Aufgabe a13.
  * Rechner fuer Brueche.
- * @version 2023-03-22
+ * @version 2023-04-02
  * @param inout Liefert Eingaben und akzeptiert Ausgaben.
  */
 public record RatShell(IO inout) {

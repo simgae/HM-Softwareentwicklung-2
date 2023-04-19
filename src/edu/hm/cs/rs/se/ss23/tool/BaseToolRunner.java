@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 
 /** Aufruf der Werkzeuge, alle nacheinander.
  * @author Reinhard Schiedermeier, rs@cs.hm.edu
- * @version 2023-03-19
+ * @version 2023-04-15
  */
 @SuppressWarnings({"PMD.NPathComplexity", // bug im PMD 6.55 => Integer.MAX_VALUE
         "checkstyle:DescendantToken"}) // Pfade unabhaengig, kein Zusammenfassen moeglich
@@ -342,7 +342,8 @@ public abstract class BaseToolRunner {
                 .map(Path::toString)
                 .filter(file -> Stream.of(subs)
                         .filter(Predicate.not(String::isEmpty))
-                        .allMatch(file::contains));
+                        .allMatch(file::contains))
+                .filter(Predicate.not(adir -> adir.contains(Path.of("edu", "hm", "cs", "rs").toString())));
     }
 
     private Stream<String> findFQCNs(Path dir, String... subs) throws IOException {
