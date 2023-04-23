@@ -1,11 +1,14 @@
 package edu.hm.gaertner.simon.lab23.a32;
 
+import edu.hm.cs.rs.se.ss23.Xmark;
+
 import java.util.Map;
 import java.util.TreeMap;
 
 /**
  * Task 3.2.
  */
+@Xmark("a32")
 public class CachedRoman {
 // This mutation can not be killed because
 // factory class have no ctor - no object is initialized
