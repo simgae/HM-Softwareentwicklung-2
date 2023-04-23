@@ -1,0 +1,3 @@
+edu\hm\gaertner\simon\lab23\a32\Roman.java:18:	DoubleBraceInitialization:	Double-brace initialization should be avoided
+edu\hm\gaertner\simon\lab23\a32\Roman.java:99:	AvoidReassigningLoopVariables:	Avoid reassigning the loop control variable 'index'
+* FAILED *

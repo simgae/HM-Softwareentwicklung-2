@@ -1,0 +1,163 @@
+--------------------------------------------------------------------------------
+[javac]
+javac -cp C:\Users\User\Desktop\SE2\sgaertne\out -encoding US-ASCII --enable-preview --release 19 -d C:\Users\User\Desktop\SE2\sgaertne\out --source-path C:\Users\User\Desktop\SE2\sgaertne\src C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a32\CachedRoman.java C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a32\Roman.java
+--------------------------------------------------------------------------------
+[javac-tests]
+javac -cp C:\Users\User\Desktop\SE2\tool\junit-platform-console-standalone.jar;C:\Users\User\Desktop\SE2\sgaertne\out -encoding US-ASCII --enable-preview --release 19 -d C:\Users\User\Desktop\SE2\sgaertne\out --source-path C:\Users\User\Desktop\SE2\sgaertne\test;C:\Users\User\Desktop\SE2\sgaertne\src C:\Users\User\Desktop\SE2\sgaertne\test\edu\hm\gaertner\simon\lab23\a32\RomanTests.java
+--------------------------------------------------------------------------------
+[javadoc]
+javadoc -cp C:\Users\User\Desktop\SE2\tool\junit-platform-console-standalone.jar;C:\Users\User\Desktop\SE2\sgaertne\out -encoding US-ASCII --enable-preview --release 19 -d C:\Users\User\Desktop\SE2\sgaertne\report\lab23\a32\javadoc -private -quiet -Xdoclint:-missing --source-path C:\Users\User\Desktop\SE2\sgaertne\test C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a32\CachedRoman.java C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a32\Roman.java
+--------------------------------------------------------------------------------
+[pmd]
+java -cp C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\animal-sniffer-annotations-1.14.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\antlr-2.7.7.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\antlr-runtime-3.5.2.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\aopalliance-1.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\asm-9.4.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\cglib-3.3.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\commons-lang3-3.8.1.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\common_2.13-4.6.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\error_prone_annotations-2.1.3.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\fastparse-v2_2.13-2.3.1.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\gson-2.8.9.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\javax.inject-1.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\jcommander-1.48.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\jol-core-0.4.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\jsoup-1.15.3.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\jsr305-3.0.2.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\lenses_2.13-0.11.11.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\logback-classic-1.2.9.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\logback-core-1.2.9.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\parsers_2.13-4.6.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\pmd-core-6.55.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\pmd-html-6.55.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\pmd-java-6.55.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\pmd-javascript-6.55.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\pmd-jsp-6.55.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\pmd-xml-6.55.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\protobuf-java-3.16.3.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\rhino-1.7.14.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\saxon-9.1.0.8-dom.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\saxon-9.1.0.8.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\slf4j-api-1.7.32.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\sourcecode_2.13-0.3.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\stringtemplate-3.2.1.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\trees_2.13-4.6.0.jar net.sourceforge.pmd.PMD --encoding US-ASCII -d C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a32 -f text -R C:\Users\User\Desktop\SE2\tool\pmd.xml --no-cache --relativize-paths-with C:\Users\User\Desktop\SE2\sgaertne\src
+edu\hm\gaertner\simon\lab23\a32\Roman.java:18:	DoubleBraceInitialization:	Double-brace initialization should be avoided
+edu\hm\gaertner\simon\lab23\a32\Roman.java:99:	AvoidReassigningLoopVariables:	Avoid reassigning the loop control variable 'index'
+* FAILED *
+--------------------------------------------------------------------------------
+[checkstyle]
+java -cp C:\Users\User\Desktop\SE2\tool\checkstyle.jar;C:\Users\User\Desktop\SE2\sgaertne\out com.puppycrawl.tools.checkstyle.Main -c C:\Users\User\Desktop\SE2\tool\checkstyle.xml C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a32\CachedRoman.java C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a32\Roman.java
+Starting audit...
+[ERROR] C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a32\Roman.java:99:22: Control variable 'index' is modified. [ModifiedControlVariable]
+Audit done.
+Checkstyle ends with 1 errors.
+* FAILED *
+--------------------------------------------------------------------------------
+[spotbugs]
+java -client -Xmx512m -cp C:\Users\User\Desktop\SE2\tool\spotbugs\lib\asm-9.4.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\asm-analysis-9.4.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\asm-commons-9.4.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\asm-tree-9.4.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\asm-util-9.4.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\bcel-6.5.0.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\commons-codec-1.15.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\commons-lang3-3.12.0.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\commons-text-1.10.0.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\dom4j-2.1.3.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\gson-2.9.1.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\httpclient5-5.1.3.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\httpcore5-5.1.3.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\httpcore5-h2-5.1.3.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\jaxen-1.2.0.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\jcip-annotations-1.0.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\jsr305-3.0.2.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\log4j-api-2.19.0.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\log4j-core-2.19.0.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\log4j-slf4j2-impl-2.19.0.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\Saxon-HE-11.4.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\slf4j-api-2.0.0.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\spotbugs-annotations.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\spotbugs-ant.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\spotbugs.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\xml-apis-1.4.01.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\xmlresolver-4.4.3-data.jar;C:\Users\User\Desktop\SE2\tool\spotbugs\lib\xmlresolver-4.4.3.jar -Dspotbugs.home=C:\Users\User\Desktop\SE2\tool\spotbugs edu.umd.cs.findbugs.FindBugs2 -effort:max -low -emacs -exclude C:\Users\User\Desktop\SE2\tool\spotbugs.xml -sourcepath C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a32 C:\Users\User\Desktop\SE2\sgaertne\out\edu\hm\gaertner\simon\lab23\a32\CachedRoman.class C:\Users\User\Desktop\SE2\sgaertne\out\edu\hm\gaertner\simon\lab23\a32\Roman$1.class C:\Users\User\Desktop\SE2\sgaertne\out\edu\hm\gaertner\simon\lab23\a32\Roman.class
+--------------------------------------------------------------------------------
+[ccnscanner]
+java -cp C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\animal-sniffer-annotations-1.14.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\antlr-2.7.7.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\antlr-runtime-3.5.2.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\aopalliance-1.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\asm-9.4.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\cglib-3.3.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\commons-lang3-3.8.1.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\common_2.13-4.6.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\error_prone_annotations-2.1.3.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\fastparse-v2_2.13-2.3.1.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\gson-2.8.9.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\javax.inject-1.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\jcommander-1.48.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\jol-core-0.4.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\jsoup-1.15.3.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\jsr305-3.0.2.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\lenses_2.13-0.11.11.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\logback-classic-1.2.9.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\logback-core-1.2.9.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\parsers_2.13-4.6.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\pmd-core-6.55.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\pmd-html-6.55.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\pmd-java-6.55.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\pmd-javascript-6.55.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\pmd-jsp-6.55.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\pmd-xml-6.55.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\protobuf-java-3.16.3.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\rhino-1.7.14.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\saxon-9.1.0.8-dom.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\saxon-9.1.0.8.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\slf4j-api-1.7.32.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\sourcecode_2.13-0.3.0.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\stringtemplate-3.2.1.jar;C:\Users\User\Desktop\SE2\tool\pmd-bin\lib\trees_2.13-4.6.0.jar;C:\Users\User\Desktop\SE2\tool\ccnscanner.jar CCNScanner C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a32
+types
+7	edu.hm.gaertner.simon.lab23.a32.CachedRoman
+14	edu.hm.gaertner.simon.lab23.a32.Roman
+methods
+3	edu.hm.gaertner.simon.lab23.a32.CachedRoman.findKeyInMap@65
+2	edu.hm.gaertner.simon.lab23.a32.CachedRoman.make@22
+2	edu.hm.gaertner.simon.lab23.a32.CachedRoman.make@44
+1	edu.hm.gaertner.simon.lab23.a32.Roman.<ctor>@50
+1	edu.hm.gaertner.simon.lab23.a32.Roman.<ctor>@62
+1	edu.hm.gaertner.simon.lab23.a32.Roman.<ctor>@73
+1	edu.hm.gaertner.simon.lab23.a32.Roman.<initializer>@18
+2	edu.hm.gaertner.simon.lab23.a32.Roman.calculateIntToString@116
+3	edu.hm.gaertner.simon.lab23.a32.Roman.calculateStringToInt@85
+3	edu.hm.gaertner.simon.lab23.a32.Roman.findKeyInMap@158
+1	edu.hm.gaertner.simon.lab23.a32.Roman.number@148
+1	edu.hm.gaertner.simon.lab23.a32.Roman.text@139
+--------------------------------------------------------------------------------
+[junit]
+java -cp C:\Users\User\Desktop\SE2\tool\junit-platform-console-standalone.jar;C:\Users\User\Desktop\SE2\sgaertne\out org.junit.runner.JUnitCore edu.hm.gaertner.simon.lab23.a32.RomanTests
+JUnit version 4.13.2
+........
+Time: 0.022
+
+OK (8 tests)
+
+--------------------------------------------------------------------------------
+[jacoco-agent]
+java -cp C:\Users\User\Desktop\SE2\tool\junit-platform-console-standalone.jar;C:\Users\User\Desktop\SE2\sgaertne\out -javaagent:C:\Users\User\Desktop\SE2\tool\jacoco\lib\jacocoagent.jar=append=false,destfile=C:\Users\User\Desktop\SE2\sgaertne\out\jacoco.exec,excludes=*Test:*Demo org.junit.runner.JUnitCore edu.hm.gaertner.simon.lab23.a32.RomanTests
+JUnit version 4.13.2
+........
+Time: 0.029
+
+OK (8 tests)
+
+--------------------------------------------------------------------------------
+[jacoco]
+java -jar C:\Users\User\Desktop\SE2\tool\jacoco\lib\jacococli.jar report C:\Users\User\Desktop\SE2\sgaertne\out\jacoco.exec --sourcefiles C:\Users\User\Desktop\SE2\sgaertne\src --classfiles C:\Users\User\Desktop\SE2\sgaertne\out\edu\hm\gaertner\simon\lab23\a32\CachedRoman.class --classfiles C:\Users\User\Desktop\SE2\sgaertne\out\edu\hm\gaertner\simon\lab23\a32\Roman$1.class --classfiles C:\Users\User\Desktop\SE2\sgaertne\out\edu\hm\gaertner\simon\lab23\a32\Roman.class --html C:\Users\User\Desktop\SE2\sgaertne\report\lab23\a32\jacoco --xml C:\Users\User\Desktop\SE2\sgaertne\report\lab23\a32\jacoco\jacoco.xml --csv C:\Users\User\Desktop\SE2\sgaertne\report\lab23\a32\jacoco\jacoco.csv
+[INFO] Loading execution data file C:\Users\User\Desktop\SE2\sgaertne\out\jacoco.exec.
+[INFO] Analyzing 3 classes.
+--------------------------------------------------------------------------------
+[pitest]
+java -cp C:\Users\User\Desktop\SE2\sgaertne\out;C:\Users\User\Desktop\SE2\tool\junit-platform-console-standalone.jar;C:\Users\User\Desktop\SE2\tool\pitest\commons-lang3-3.0.jar;C:\Users\User\Desktop\SE2\tool\pitest\commons-text-1.10.0.jar;C:\Users\User\Desktop\SE2\tool\pitest\pitest-1.11.4.jar;C:\Users\User\Desktop\SE2\tool\pitest\pitest-command-line-1.11.4.jar;C:\Users\User\Desktop\SE2\tool\pitest\pitest-entry-1.11.4.jar;C:\Users\User\Desktop\SE2\tool\pitest\pitest-junit5-plugin-1.1.2.jar org.pitest.mutationtest.commandline.MutationCoverageReport --outputFormats HTML,XML --mutators STRONGER --jvmArgs --enable-preview --excludedMethods hashCode,equals,toString --excludedClasses *Test,*Demo --reportDir C:\Users\User\Desktop\SE2\sgaertne\report\lab23\a32\pitest --threads 16 --timestampedReports=false --targetClasses edu.hm.gaertner.simon.lab23.a32.CachedRoman,edu.hm.gaertner.simon.lab23.a32.Roman$1,edu.hm.gaertner.simon.lab23.a32.Roman --targetTests edu.hm.gaertner.simon.lab23.a32.RomanTests --sourceDirs C:\Users\User\Desktop\SE2\sgaertne\src
+5:38:57 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+5:38:58 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+5:38:58 PM PIT >> INFO : Created 2 mutation test units in pre scan
+5:38:58 PM PIT >> INFO : Sending 1 test classes to minion
+5:38:58 PM PIT >> INFO : Sent tests to minion
+/-\|/-\|5:38:58 PM PIT >> INFO : Calculated coverage in 0 seconds.
+5:38:58 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+5:38:58 PM PIT >> INFO : Created 2 mutation test units
+5:39:03 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+/-5:39:05 PM PIT >> INFO : Completed in 7 seconds
+================================================================================
+- Mutators
+================================================================================
+> org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_ORDER_ELSE
+>> Generated 1 Killed 1 (100%)
+> KILLED 1 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator
+>> Generated 1 Killed 1 (100%)
+> KILLED 1 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator
+>> Generated 1 Killed 1 (100%)
+> KILLED 0 SURVIVED 0 TIMED_OUT 1 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator
+>> Generated 4 Killed 4 (100%)
+> KILLED 4 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_ELSE
+>> Generated 5 Killed 3 (60%)
+> KILLED 3 SURVIVED 2 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator
+>> Generated 2 Killed 2 (100%)
+> KILLED 2 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_ORDER_IF
+>> Generated 1 Killed 1 (100%)
+> KILLED 1 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.MathMutator
+>> Generated 7 Killed 7 (100%)
+> KILLED 7 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator
+>> Generated 2 Killed 2 (100%)
+> KILLED 2 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF
+>> Generated 5 Killed 3 (60%)
+> KILLED 3 SURVIVED 2 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+================================================================================
+- Timings
+================================================================================
+> pre-scan for mutations : < 1 second
+> scan classpath : < 1 second
+> coverage and dependency analysis : < 1 second
+> build mutation tests : < 1 second
+> run mutation analysis : 6 seconds
+--------------------------------------------------------------------------------
+> Total  : 7 seconds
+--------------------------------------------------------------------------------
+================================================================================
+- Statistics
+================================================================================
+>> Line Coverage (for mutated classes only): 56/57 (98%)
+>> Generated 29 mutations Killed 25 (86%)
+>> Mutations with no coverage 0. Test strength 86%
+>> Ran 34 tests (1.17 tests per mutation)
+Enhanced functionality available at https://www.arcmutate.com/

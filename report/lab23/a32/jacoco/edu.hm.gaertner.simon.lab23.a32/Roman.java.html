@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Roman.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">edu.hm.gaertner.simon.lab23.a32</a> &gt; <span class="el_source">Roman.java</span></div><h1>Roman.java</h1><pre class="source lang-java linenums">package edu.hm.gaertner.simon.lab23.a32;
+
+
+import java.util.Collections;
+import java.util.Map;
+import java.util.TreeMap;
+
+/**
+ * Task 3.2.
+ */
+public class Roman {
+
+    /**
+     * Map for values. Map numbers to roman chars.
+     */
+    @SuppressWarnings(&quot;magicnumber&quot;)
+<span class="fc" id="L17">    static final Map&lt;Integer, String&gt; VALUES = new TreeMap&lt;&gt;(Collections.reverseOrder())</span>
+<span class="fc" id="L18">    {{</span>
+<span class="fc" id="L19">        put(1000, &quot;M&quot;);</span>
+<span class="fc" id="L20">        put(900, &quot;CM&quot;);</span>
+<span class="fc" id="L21">        put(500, &quot;D&quot;);</span>
+<span class="fc" id="L22">        put(400, &quot;CD&quot;);</span>
+<span class="fc" id="L23">        put(100, &quot;C&quot;);</span>
+<span class="fc" id="L24">        put(90, &quot;XC&quot;);</span>
+<span class="fc" id="L25">        put(50, &quot;L&quot;);</span>
+<span class="fc" id="L26">        put(40, &quot;XL&quot;);</span>
+<span class="fc" id="L27">        put(10, &quot;X&quot;);</span>
+<span class="fc" id="L28">        put(9, &quot;IX&quot;);</span>
+<span class="fc" id="L29">        put(5, &quot;V&quot;);</span>
+<span class="fc" id="L30">        put(4, &quot;IV&quot;);</span>
+<span class="fc" id="L31">        put(1, &quot;I&quot;);</span>
+<span class="fc" id="L32">    }};</span>
+
+    /**
+     * roman string format of number.
+     */
+    private final String numberInStringFormat;
+
+    /**
+     * int format of number.
+     */
+    private final int numberInIntFormat;
+
+
+    /**
+     * ctor- only transmitted string format.
+     *
+     * @param numberInStringFormat string format of number.
+     */
+<span class="fc" id="L50">    public Roman(String numberInStringFormat) {</span>
+
+
+<span class="fc" id="L53">        this.numberInStringFormat = numberInStringFormat;</span>
+<span class="fc" id="L54">        this.numberInIntFormat = calculateStringToInt(numberInStringFormat);</span>
+<span class="fc" id="L55">    }</span>
+
+    /**
+     * ctor - only transmitted int format.
+     *
+     * @param numberInIntFormat number in int format.
+     */
+<span class="fc" id="L62">    public Roman(int numberInIntFormat) {</span>
+<span class="fc" id="L63">        this.numberInIntFormat = numberInIntFormat;</span>
+<span class="fc" id="L64">        this.numberInStringFormat = calculateIntToString(numberInIntFormat);</span>
+<span class="fc" id="L65">    }</span>
+
+    /**
+     * Ctor - when both number formats are available.
+     *
+     * @param numberInIntFormat    - number in int format
+     * @param numberInStringFormat - number in string format
+     */
+<span class="fc" id="L73">    public Roman(int numberInIntFormat, String numberInStringFormat) {</span>
+<span class="fc" id="L74">        this.numberInIntFormat = numberInIntFormat;</span>
+<span class="fc" id="L75">        this.numberInStringFormat = numberInStringFormat;</span>
+
+<span class="fc" id="L77">    }</span>
+
+    /**
+     * Calculate roman number string into int value.
+     *
+     * @param numberInStringFormat number in string format.
+     * @return number in int format.
+     */
+    private static int calculateStringToInt(String numberInStringFormat) {
+
+<span class="fc" id="L87">        final char[] chars = numberInStringFormat.toCharArray();</span>
+
+
+<span class="fc" id="L90">        int result = 0;</span>
+
+
+<span class="fc bfc" id="L93" title="All 2 branches covered.">        for (int index = 0; index &lt; chars.length; index++) {</span>
+
+<span class="fc" id="L95">            final String twoLetters = chars[index] + String.valueOf(chars[index + 1]);</span>
+
+<span class="fc bfc" id="L97" title="All 2 branches covered.">            if (VALUES.containsValue(twoLetters)) {</span>
+<span class="fc" id="L98">                result += findKeyInMap(twoLetters);</span>
+<span class="fc" id="L99">                index++;</span>
+            } else {
+<span class="fc" id="L101">                final String oneLetter = String.valueOf(chars[index]);</span>
+<span class="fc" id="L102">                result += findKeyInMap(oneLetter);</span>
+            }
+
+        }
+
+<span class="fc" id="L107">        return result;</span>
+    }
+
+    /**
+     * Calculate number in int format to roman string format.
+     *
+     * @param numberInIntFormat int value.
+     * @return number in roman string format.
+     */
+    private static String calculateIntToString(int numberInIntFormat) {
+
+<span class="fc" id="L118">        int number = numberInIntFormat;</span>
+<span class="fc" id="L119">        final StringBuilder result = new StringBuilder();</span>
+
+<span class="fc bfc" id="L121" title="All 2 branches covered.">        for (Map.Entry&lt;Integer, String&gt; value : VALUES.entrySet()) {</span>
+<span class="fc" id="L122">            final int rest = number / value.getKey();</span>
+
+<span class="fc" id="L124">            result.append(String.valueOf(value.getValue()).repeat(Math.max(0, rest)));</span>
+
+<span class="fc" id="L126">            number %= value.getKey();</span>
+
+<span class="fc" id="L128">        }</span>
+
+<span class="fc" id="L130">        return String.valueOf(result);</span>
+
+    }
+
+    /**
+     * getter for roman number in string format.
+     *
+     * @return string format of number.
+     */
+    public String text() {
+<span class="fc" id="L140">        return this.numberInStringFormat;</span>
+    }
+
+    /**
+     * getter for number in int format.
+     *
+     * @return int format of number.
+     */
+    public int number() {
+<span class="fc" id="L149">        return this.numberInIntFormat;</span>
+    }
+
+    /**
+     * Find key by value in map.
+     *
+     * @param value value of map.
+     * @return key of value.
+     */
+    private static int findKeyInMap(String value) {
+
+<span class="fc" id="L160">        int result = 0;</span>
+
+<span class="fc bfc" id="L162" title="All 2 branches covered.">        for (Map.Entry&lt;Integer, String&gt; entry : VALUES.entrySet()) {</span>
+<span class="fc bfc" id="L163" title="All 2 branches covered.">            if (entry.getValue().equals(value)) {</span>
+<span class="fc" id="L164">                result += entry.getKey();</span>
+            }
+<span class="fc" id="L166">        }</span>
+<span class="fc" id="L167">        return result;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

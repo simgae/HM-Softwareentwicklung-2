@@ -1,0 +1,16 @@
+types
+7	edu.hm.gaertner.simon.lab23.a32.CachedRoman
+14	edu.hm.gaertner.simon.lab23.a32.Roman
+methods
+3	edu.hm.gaertner.simon.lab23.a32.CachedRoman.findKeyInMap@65
+2	edu.hm.gaertner.simon.lab23.a32.CachedRoman.make@22
+2	edu.hm.gaertner.simon.lab23.a32.CachedRoman.make@44
+1	edu.hm.gaertner.simon.lab23.a32.Roman.<ctor>@50
+1	edu.hm.gaertner.simon.lab23.a32.Roman.<ctor>@62
+1	edu.hm.gaertner.simon.lab23.a32.Roman.<ctor>@73
+1	edu.hm.gaertner.simon.lab23.a32.Roman.<initializer>@18
+2	edu.hm.gaertner.simon.lab23.a32.Roman.calculateIntToString@116
+3	edu.hm.gaertner.simon.lab23.a32.Roman.calculateStringToInt@85
+3	edu.hm.gaertner.simon.lab23.a32.Roman.findKeyInMap@158
+1	edu.hm.gaertner.simon.lab23.a32.Roman.number@148
+1	edu.hm.gaertner.simon.lab23.a32.Roman.text@139

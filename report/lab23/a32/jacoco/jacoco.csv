@@ -1,0 +1,4 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+JaCoCo Coverage Report,edu.hm.gaertner.simon.lab23.a32,Roman.new TreeMap() {...},0,82,0,0,0,15,0,1,0,1
+JaCoCo Coverage Report,edu.hm.gaertner.simon.lab23.a32,CachedRoman,3,90,0,8,1,17,1,8,1,4
+JaCoCo Coverage Report,edu.hm.gaertner.simon.lab23.a32,Roman,0,162,0,10,0,39,0,14,0,9
