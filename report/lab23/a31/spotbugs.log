@@ -1,0 +1,1 @@
+edu/hm/gaertner/simon/lab23/a31/MonoSet.java:112:113 It: edu.hm.gaertner.simon.lab23.a31.MonoSetIterator.next() cannot throw NoSuchElementException (L) 

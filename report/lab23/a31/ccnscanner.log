@@ -1,0 +1,17 @@
+types
+11	edu.hm.gaertner.simon.lab23.a31.MonoSet
+7	edu.hm.gaertner.simon.lab23.a31.MonoSetIterator
+methods
+1	edu.hm.gaertner.simon.lab23.a31.MonoSet.<ctor>@21
+2	edu.hm.gaertner.simon.lab23.a31.MonoSet.add@36
+1	edu.hm.gaertner.simon.lab23.a31.MonoSet.getValue@64
+1	edu.hm.gaertner.simon.lab23.a31.MonoSet.iterator@26
+3	edu.hm.gaertner.simon.lab23.a31.MonoSet.remove@48
+1	edu.hm.gaertner.simon.lab23.a31.MonoSet.setValue@72
+2	edu.hm.gaertner.simon.lab23.a31.MonoSet.size@31
+1	edu.hm.gaertner.simon.lab23.a31.MonoSetIterator.<ctor>@99
+1	edu.hm.gaertner.simon.lab23.a31.MonoSetIterator.getLength@128
+1	edu.hm.gaertner.simon.lab23.a31.MonoSetIterator.getValue@120
+2	edu.hm.gaertner.simon.lab23.a31.MonoSetIterator.hasNext@106
+1	edu.hm.gaertner.simon.lab23.a31.MonoSetIterator.next@111
+1	edu.hm.gaertner.simon.lab23.a31.MonoSetIterator.setLength@136

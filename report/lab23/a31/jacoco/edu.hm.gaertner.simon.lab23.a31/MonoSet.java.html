@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MonoSet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">edu.hm.gaertner.simon.lab23.a31</a> &gt; <span class="el_source">MonoSet.java</span></div><h1>MonoSet.java</h1><pre class="source lang-java linenums">package edu.hm.gaertner.simon.lab23.a31;
+
+import java.util.AbstractSet;
+import java.util.Iterator;
+import java.util.Objects;
+
+/**
+ * Mono Set. Contains only one element. All other elements are for this set duplicates.
+ * @param &lt;T&gt; Object which should be saved in that set.
+ */
+public class MonoSet &lt;T&gt; extends AbstractSet&lt;T&gt;{
+
+    /**
+     * One and only value in this set.
+     */
+    private T value;
+
+    /**
+     * Ctor - initialize value with null.
+     */
+<span class="fc" id="L21">    public MonoSet(){</span>
+<span class="fc" id="L22">        this.value = null;</span>
+<span class="fc" id="L23">    }</span>
+
+    @Override
+    public Iterator&lt;T&gt; iterator() {
+<span class="fc" id="L27">        return new MonoSetIterator&lt;&gt;(getValue());</span>
+    }
+
+    @Override
+    public int size() {
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        return Objects.isNull(getValue()) ? 0 : 1;</span>
+    }
+
+    @Override
+    public boolean add(T value){
+<span class="fc" id="L37">        boolean result = false;</span>
+
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if (Objects.isNull(getValue())){</span>
+<span class="fc" id="L40">            setValue(value);</span>
+<span class="fc" id="L41">            result = true;</span>
+        }
+
+<span class="fc" id="L44">        return result;</span>
+    }
+
+    @Override
+    public boolean remove(Object value){
+
+<span class="fc" id="L50">        boolean result = false;</span>
+
+<span class="fc bfc" id="L52" title="All 4 branches covered.">        if(!Objects.isNull(getValue()) &amp;&amp; getValue().equals(value)){</span>
+<span class="fc" id="L53">            setValue(null);</span>
+<span class="fc" id="L54">            result = true;</span>
+        }
+
+<span class="fc" id="L57">        return result;</span>
+    }
+
+    /**
+     * private getter for value of set.
+     * @return first and only value of this MonoSet.
+     */
+    private T getValue() {
+<span class="fc" id="L65">        return value;</span>
+    }
+
+    /**
+     * private setter for value of set.
+     * @param value new value.
+     */
+    private void setValue(T value) {
+<span class="fc" id="L73">        this.value = value;</span>
+<span class="fc" id="L74">    }</span>
+
+}
+
+/**
+ * Class for Iterator about MonoSet.
+ * @param &lt;T&gt; Object in MonoSet.
+ */
+class MonoSetIterator&lt;T&gt; implements Iterator&lt;T&gt;{
+
+    /**
+     * Value of MonoSet.
+     */
+    private final T value;
+
+    /**
+     * Length of MonoSet -&gt; Default 1.
+     * Limits the iterator for only one run.
+     */
+    private int length;
+
+    /**
+     * Ctor for MonoSet Iterator.
+     * @param value of MonoSet.
+     */
+<span class="fc" id="L99">    MonoSetIterator(T value){</span>
+<span class="fc" id="L100">        this.value = value;</span>
+
+<span class="fc" id="L102">        this.length = 1;</span>
+<span class="fc" id="L103">    }</span>
+
+    @Override
+    public boolean hasNext() {
+<span class="fc bfc" id="L107" title="All 4 branches covered.">        return getLength() == 1 &amp;&amp; Objects.nonNull(getValue());</span>
+    }
+
+    @Override
+    public T next() {
+<span class="fc" id="L112">        setLength();</span>
+<span class="fc" id="L113">        return getValue();</span>
+    }
+
+    /**
+     * private getter for value.
+     * @return value of monoSet.
+     */
+    private T getValue() {
+<span class="fc" id="L121">        return value;</span>
+    }
+
+    /**
+     * private getter for length of monoSet.
+     * @return length.
+     */
+    private int getLength() {
+<span class="fc" id="L129">        return length;</span>
+    }
+
+    /**
+     * private setter for length.
+     * Can only set to value 0!
+     */
+    private void setLength() {
+<span class="fc" id="L137">        this.length = 0;</span>
+<span class="fc" id="L138">    }</span>
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
