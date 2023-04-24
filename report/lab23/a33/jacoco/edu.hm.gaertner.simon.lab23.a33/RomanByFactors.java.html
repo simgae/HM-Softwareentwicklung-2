@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RomanByFactors.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">edu.hm.gaertner.simon.lab23.a33</a> &gt; <span class="el_source">RomanByFactors.java</span></div><h1>RomanByFactors.java</h1><pre class="source lang-java linenums">package edu.hm.gaertner.simon.lab23.a33;
+
+import edu.hm.cs.rs.se.ss23.a32.Factors;
+import edu.hm.gaertner.simon.lab23.a32.Roman;
+
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.List;
+import java.util.Comparator;
+import java.util.ArrayList;
+import java.util.Collections;
+
+
+
+/**
+ * Sorts romans by factors.
+ */
+<span class="fc" id="L18">public class RomanByFactors implements Comparator&lt;Roman&gt;, Serializable {</span>
+
+    /**
+     * Version ID.
+     */
+    @Serial
+    private static final long serialVersionUID = 1;
+
+    @Override
+    public int compare(Roman fstRoman, Roman sndRoman) {
+
+<span class="fc" id="L29">        final List&lt;Integer&gt; factorsOfFstRoman = new ArrayList&lt;&gt;(Factors.of(fstRoman.number()));</span>
+<span class="fc" id="L30">        final List&lt;Integer&gt; factorsOfSndRoman = new ArrayList&lt;&gt;(Factors.of(sndRoman.number()));</span>
+
+<span class="fc" id="L32">        int value = 0;</span>
+
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (factorsOfFstRoman.size() == factorsOfSndRoman.size()) {</span>
+<span class="fc" id="L35">            Collections.sort(factorsOfFstRoman);</span>
+<span class="fc" id="L36">            Collections.sort(factorsOfSndRoman);</span>
+
+<span class="fc" id="L38">            boolean difference = false;</span>
+<span class="fc bfc" id="L39" title="All 4 branches covered.">            for (int index = 0; index &lt; factorsOfFstRoman.size() &amp;&amp; !difference; index++) {</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">                if (factorsOfFstRoman.get(index) &lt; factorsOfSndRoman.get(index)){</span>
+<span class="fc" id="L41">                    value = -1;</span>
+<span class="fc" id="L42">                    difference = true;</span>
+                }
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">                else if (factorsOfFstRoman.get(index) &gt; factorsOfSndRoman.get(index)){</span>
+<span class="nc" id="L45">                    value = 1;</span>
+<span class="nc" id="L46">                    difference = true;</span>
+                }
+            }
+
+
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        } else if (factorsOfFstRoman.size() &lt; factorsOfSndRoman.size())</span>
+<span class="fc" id="L52">            value = -1;</span>
+        else
+<span class="fc" id="L54">            value = 1;</span>
+
+<span class="fc" id="L56">        return value;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

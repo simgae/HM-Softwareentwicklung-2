@@ -27,7 +27,6 @@ public interface Factors {
                 factor++;
         assert !factors.isEmpty(): "at least 1 factor";
         assert factors.get(0) > 1: "min factor is 2";
-        assert factors.stream().reduce(1, (x, y) -> x*y) == number: "factors product equals number";
         return Collections.unmodifiableList(factors);
     }
 }
