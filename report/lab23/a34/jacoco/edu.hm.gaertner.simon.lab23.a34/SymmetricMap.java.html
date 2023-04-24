@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SymmetricMap.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">edu.hm.gaertner.simon.lab23.a34</a> &gt; <span class="el_source">SymmetricMap.java</span></div><h1>SymmetricMap.java</h1><pre class="source lang-java linenums">package edu.hm.gaertner.simon.lab23.a34;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.AbstractMap;
+import java.util.Set;
+
+
+/**
+ * Task 3.4.
+ *
+ * @param &lt;K&gt; - type of keys.
+ * @param &lt;V&gt; - type of values.
+ */
+<span class="fc" id="L15">public class SymmetricMap&lt;K, V&gt; extends AbstractMap&lt;K, V&gt; {</span>
+
+    /**
+     * Delegate map.
+     */
+<span class="fc" id="L20">    private final Map&lt;K, V&gt; delegate = new HashMap&lt;&gt;();</span>
+
+    @Override
+    public Set&lt;Entry&lt;K, V&gt;&gt; entrySet() {
+<span class="fc" id="L24">        return delegate.entrySet();</span>
+    }
+
+    @Override
+    public V put(K key, V value) {
+
+<span class="fc" id="L30">        V result = null;</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if (delegate.containsValue(value)) {</span>
+<span class="fc" id="L32">            final K keyOfValue = findKeyInMap(value, delegate);</span>
+<span class="fc" id="L33">            result = delegate.remove(keyOfValue);</span>
+        }
+<span class="fc" id="L35">        delegate.put(key, value);</span>
+<span class="fc" id="L36">        return result;</span>
+    }
+
+
+    /**
+     * Find key by value in map.
+     *
+     * @param value    value of map.
+     * @param &lt;K&gt;      - type of keys
+     * @param &lt;V&gt;      - type of values
+     * @param delegate - map
+     * @return key of value.
+     */
+    public static &lt;K, V&gt; K findKeyInMap(V value, Map&lt;K, V&gt; delegate) {
+
+<span class="fc" id="L51">        K result = null;</span>
+
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        for (Map.Entry&lt;K, V&gt; entry : delegate.entrySet()) {</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">            if (entry.getValue().equals(value))</span>
+<span class="fc" id="L55">                result = entry.getKey();</span>
+
+<span class="fc" id="L57">        }</span>
+<span class="fc" id="L58">        return result;</span>
+    }
+
+    /**
+     * Revert map. Exchange keys and values.
+     *
+     * @return new symmetric map with exchanged keys and values.
+     */
+    public SymmetricMap&lt;V, K&gt; revert() {
+
+<span class="fc" id="L68">        final SymmetricMap&lt;V, K&gt; result = new SymmetricMap&lt;&gt;();</span>
+
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        for (Map.Entry&lt;K, V&gt; entry : delegate.entrySet()) {</span>
+<span class="fc" id="L71">            result.put(entry.getValue(), entry.getKey());</span>
+<span class="fc" id="L72">        }</span>
+
+<span class="fc" id="L74">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
