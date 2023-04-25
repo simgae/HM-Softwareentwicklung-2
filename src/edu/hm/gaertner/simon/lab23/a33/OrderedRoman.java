@@ -2,7 +2,7 @@ package edu.hm.gaertner.simon.lab23.a33;
 
 
 import edu.hm.cs.rs.se.ss23.Xmark;
-import edu.hm.gaertner.simon.lab23.a32.Roman;
+import edu.hm.cs.rs.se.ss23.a32.Roman;
 
 import java.util.Objects;
 

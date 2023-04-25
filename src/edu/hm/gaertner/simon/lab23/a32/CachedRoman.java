@@ -1,6 +1,7 @@
 package edu.hm.gaertner.simon.lab23.a32;
 
 import edu.hm.cs.rs.se.ss23.Xmark;
+import edu.hm.cs.rs.se.ss23.a32.Roman;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -33,8 +34,11 @@ public class CachedRoman {
 
         final Roman result;
 
-        // This mutation can not be killed because if statement has
-        // only performance reasons and no functionality
+        // This mutation can not be killed because the tool runner
+        // run in one program instance -> multiple tools run the tests
+        // and already collect the objects in the maps
+        // PiTest run at the end and do not have to create new objects.
+        // When you run PiTest isolated the mutations are gone.
         if (CACHE_INT.containsKey(number))
             result = CACHE_INT.get(number);
         else {
@@ -57,8 +61,11 @@ public class CachedRoman {
 
         final Roman result;
 
-        // This mutation can not be killed because if statement has
-        // only performance reasons and no functionality
+        // This mutation can not be killed because the tool runner
+        // run in one program instance -> multiple tools run the tests
+        // and already collect the objects in the maps
+        // PiTest run at the end and do not have to create new objects.
+        // When you run PiTest isolated the mutations are gone.
         if (CACHE_STRING.containsKey(number))
             result = CACHE_STRING.get(number);
         else {

@@ -1,7 +1,7 @@
 package edu.hm.gaertner.simon.lab23.demo;
 
+import edu.hm.cs.rs.se.ss23.a32.Roman;
 import edu.hm.gaertner.simon.lab23.a31.MonoSet;
-import edu.hm.gaertner.simon.lab23.a32.Roman;
 import edu.hm.gaertner.simon.lab23.a33.OrderedRoman;
 import edu.hm.gaertner.simon.lab23.a33.RomanByFactors;
 import edu.hm.gaertner.simon.lab23.a33.RomanLexicalOrder;

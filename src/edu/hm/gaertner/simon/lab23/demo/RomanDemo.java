@@ -1,9 +1,7 @@
 package edu.hm.gaertner.simon.lab23.demo;
 
+import edu.hm.cs.rs.se.ss23.a32.Roman;
 import edu.hm.gaertner.simon.lab23.a32.CachedRoman;
-import edu.hm.gaertner.simon.lab23.a32.Roman;
-
-import java.time.LocalDate;
 
 public class RomanDemo {
 

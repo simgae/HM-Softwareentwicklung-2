@@ -1,54 +1,14 @@
 package edu.hm.gaertner.simon.lab23.a32;
 
+import edu.hm.cs.rs.se.ss23.a32.Roman;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 import static org.junit.Assert.assertEquals;
 
 public class RomanTests {
 
-    @Test
-    public void testIntToString() {
-
-        final Roman roman = new Roman(9);
-
-        final String want = "IX";
-
-        assertEquals(want, roman.text());
-    }
-
-    @Test
-    public void test2023() {
-
-        final Roman roman = new Roman(2023);
-
-        final String want = "MMXXIII";
-
-        assertEquals(want, roman.text());
-    }
-
-
-    @Test
-    public void testStringToInt() {
-
-        final Roman roman = new Roman("XIX");
-
-        final int want = 19;
-
-        assertEquals(want, roman.number());
-    }
-
-    @Test
-    public void testStringToIntCashed() {
-
-        final Roman roman = CachedRoman.make("IX");
-
-        final int want = 9;
-
-        assertEquals(want, roman.number());
-    }
-
-
-    @Test
+    @Test (timeout = 4000)
     public void testStringToIntCashedNoCalculation() {
 
         final Roman roman = CachedRoman.make("XCIX");
@@ -60,17 +20,7 @@ public class RomanTests {
         assertEquals(want, snd.number());
     }
 
-    @Test
-    public void testIntToStringCashed() {
-
-        final Roman roman = CachedRoman.make(9);
-
-        final String want = "IX";
-
-        assertEquals(want, roman.text());
-    }
-
-    @Test
+    @Test (timeout = 4000)
     public void testIntToStringCashedNoCalculation() {
 
         final Roman roman = CachedRoman.make(9);
@@ -81,16 +31,25 @@ public class RomanTests {
         assertEquals(want, roman.text());
         assertEquals(want, snd.text());
     }
-    @Test
-    public void testIntToStringCashedNoCalculationThreeTimes() {
+    @Test (timeout = 7000)
+    public void testIntToStringCashedCalculation() {
 
-        final Roman roman = CachedRoman.make(9);
-        final Roman romanTrd = CachedRoman.make(19);
-        final Roman snd = CachedRoman.make(9);
+        final Roman roman = CachedRoman.make(12);
+        final Roman snd = CachedRoman.make(13);
 
-        assertEquals("IX", roman.text());
-        assertEquals("IX", snd.text());
-        assertEquals("XIX", romanTrd.text());
+        assertEquals("XII", roman.text());
+        assertEquals("XIII", snd.text());
+    }
+
+    @Test (timeout = 7000)
+    public void testStringToIntCashedCalculation() {
+
+        final Roman roman = CachedRoman.make("XI");
+        final Roman snd = CachedRoman.make("X");
+
+
+        assertEquals(11, roman.number());
+        assertEquals(10, snd.number());
     }
 
 

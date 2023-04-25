@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CachedRoman.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">edu.hm.gaertner.simon.lab23.a32</a> &gt; <span class="el_source">CachedRoman.java</span></div><h1>CachedRoman.java</h1><pre class="source lang-java linenums">package edu.hm.gaertner.simon.lab23.a32;
 
+import edu.hm.cs.rs.se.ss23.Xmark;
+import edu.hm.cs.rs.se.ss23.a32.Roman;
+
 import java.util.Map;
 import java.util.TreeMap;
 
 /**
  * Task 3.2.
  */
-<span class="nc" id="L9">public class CachedRoman {</span>
+@Xmark(&quot;a32&quot;)
+<span class="nc" id="L13">public class CachedRoman {</span>
+// This mutation can not be killed because
+// factory class have no ctor - no object is initialized
 
     /**
-     * Map used to chace vaules.
+     * Map used to cache values.
      */
-<span class="fc" id="L14">    private static final Map&lt;Integer, String&gt; CACHE = new TreeMap&lt;&gt;();</span>
+<span class="fc" id="L20">    private static final Map&lt;Integer, Roman&gt; CACHE_INT = new TreeMap&lt;&gt;();</span>
+
+    /**
+     * Map used to cache values.
+     */
+<span class="fc" id="L25">    private static final Map&lt;String, Roman&gt; CACHE_STRING = new TreeMap&lt;&gt;();</span>
 
     /**
      * Facotry method - create string value out of int format.
@@ -23,14 +34,16 @@ import java.util.TreeMap;
 
         final Roman result;
 
-<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (CACHE.containsKey(number))</span>
-<span class="fc" id="L27">            result = new Roman(number, CACHE.get(number));</span>
+        // This mutation can not be killed because if statement has
+        // only performance reasons and no functionality
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if (CACHE_INT.containsKey(number))</span>
+<span class="fc" id="L40">            result = CACHE_INT.get(number);</span>
         else {
-<span class="fc" id="L29">            result = new Roman(number);</span>
-<span class="fc" id="L30">            CACHE.put(number, result.text());</span>
+<span class="fc" id="L42">            result = new Roman(number);</span>
+<span class="fc" id="L43">            CACHE_INT.put(number, result);</span>
         }
 
-<span class="fc" id="L33">        return result;</span>
+<span class="fc" id="L46">        return result;</span>
 
     }
 
@@ -45,33 +58,16 @@ import java.util.TreeMap;
 
         final Roman result;
 
-<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (CACHE.containsValue(number))</span>
-<span class="fc" id="L49">            result = new Roman(findKeyInMap(number), number);</span>
+        // This mutation can not be killed because if statement has
+        // only performance reasons and no functionality
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        if (CACHE_STRING.containsKey(number))</span>
+<span class="fc" id="L64">            result = CACHE_STRING.get(number);</span>
         else {
-<span class="fc" id="L51">            result = new Roman(number);</span>
-<span class="fc" id="L52">            CACHE.put(result.number(), number);</span>
+<span class="fc" id="L66">            result = new Roman(number);</span>
+<span class="fc" id="L67">            CACHE_STRING.put(number, result);</span>
         }
 
-<span class="fc" id="L55">        return result;</span>
-    }
-
-
-    /**
-     * Find key by value in map.
-     *
-     * @param value value of map.
-     * @return key of value.
-     */
-    private static int findKeyInMap(String value) {
-
-<span class="fc" id="L67">        int result = 0;</span>
-
-<span class="fc bfc" id="L69" title="All 2 branches covered.">        for (Map.Entry&lt;Integer, String&gt; entry : CACHE.entrySet()) {</span>
-<span class="fc bfc" id="L70" title="All 2 branches covered.">            if (entry.getValue().equals(value)) {</span>
-<span class="fc" id="L71">                result += entry.getKey();</span>
-            }
-<span class="fc" id="L73">        }</span>
-<span class="fc" id="L74">        return result;</span>
+<span class="fc" id="L70">        return result;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

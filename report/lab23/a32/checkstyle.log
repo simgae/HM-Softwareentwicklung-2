@@ -1,5 +1,2 @@
 Starting audit...
-[ERROR] C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a32\Roman.java:99:22: Control variable 'index' is modified. [ModifiedControlVariable]
 Audit done.
-Checkstyle ends with 1 errors.
-* FAILED *
