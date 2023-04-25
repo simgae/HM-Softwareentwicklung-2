@@ -14,9 +14,14 @@ public class CachedRoman {
 // factory class have no ctor - no object is initialized
 
     /**
-     * Map used to chace vaules.
+     * Map used to cache values.
      */
-    private static final Map<Integer, String> CACHE = new TreeMap<>();
+    private static final Map<Integer, Roman> CACHE_INT = new TreeMap<>();
+
+    /**
+     * Map used to cache values.
+     */
+    private static final Map<String, Roman> CACHE_STRING = new TreeMap<>();
 
     /**
      * Facotry method - create string value out of int format.
@@ -30,11 +35,11 @@ public class CachedRoman {
 
         // This mutation can not be killed because if statement has
         // only performance reasons and no functionality
-        if (CACHE.containsKey(number))
-            result = new Roman(number, CACHE.get(number));
+        if (CACHE_INT.containsKey(number))
+            result = CACHE_INT.get(number);
         else {
             result = new Roman(number);
-            CACHE.put(number, result.text());
+            CACHE_INT.put(number, result);
         }
 
         return result;
@@ -54,32 +59,13 @@ public class CachedRoman {
 
         // This mutation can not be killed because if statement has
         // only performance reasons and no functionality
-        if (CACHE.containsValue(number))
-            result = new Roman(findKeyInMap(number), number);
+        if (CACHE_STRING.containsKey(number))
+            result = CACHE_STRING.get(number);
         else {
             result = new Roman(number);
-            CACHE.put(result.number(), number);
+            CACHE_STRING.put(number, result);
         }
 
-        return result;
-    }
-
-
-    /**
-     * Find key by value in map.
-     *
-     * @param value value of map.
-     * @return key of value.
-     */
-    private static int findKeyInMap(String value) {
-
-        int result = 0;
-
-        for (Map.Entry<Integer, String> entry : CACHE.entrySet()) {
-            if (entry.getValue().equals(value)) {
-                result += entry.getKey();
-            }
-        }
         return result;
     }
 }
