@@ -31,16 +31,8 @@ public class OrderedRoman extends Roman implements Comparable<Roman> {
 
         boolean result = false;
 
-        if(!Objects.isNull(roman)){
-            if (this.hashCode() == roman.hashCode())
-                result = true;
-
-            // This mutation can be killed by finding
-            // two int numbers which cause a hashcode
-            // collision -> in this case
-            // the following else if statement is
-            // necessary
-            else if (super.equals(roman))
+        if (!Objects.isNull(roman) && roman instanceof Roman castRoman) {
+            if (this.hashCode() == roman.hashCode() && this.number() == castRoman.number() && this.text().equals(castRoman.text()))
                 result = true;
         }
 

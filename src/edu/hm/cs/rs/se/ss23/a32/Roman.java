@@ -42,7 +42,7 @@ public class Roman {
     private String text;
 
     /** Verzoegerung beim Erzeugen neuer Objekte. */ {
-        final int delayMillis = Integer.parseInt(System.getProperty("delay", "3000"));
+        final int delayMillis = Integer.parseInt(System.getProperty("delay", "0"));
         try {
             Thread.sleep(delayMillis);
         } catch(InterruptedException interruptedException) {

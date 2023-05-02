@@ -1,13 +1,13 @@
 types
-9	edu.hm.gaertner.simon.lab23.a33.OrderedRoman
+10	edu.hm.gaertner.simon.lab23.a33.OrderedRoman
 7	edu.hm.gaertner.simon.lab23.a33.RomanByFactors
 3	edu.hm.gaertner.simon.lab23.a33.RomanLexicalOrder
 3	edu.hm.gaertner.simon.lab23.a33.RomanTextLengthOrder
 methods
-1	edu.hm.gaertner.simon.lab23.a33.OrderedRoman.<ctor>@18
-3	edu.hm.gaertner.simon.lab23.a33.OrderedRoman.compareTo@49
-4	edu.hm.gaertner.simon.lab23.a33.OrderedRoman.equals@28
-1	edu.hm.gaertner.simon.lab23.a33.OrderedRoman.hashCode@23
+1	edu.hm.gaertner.simon.lab23.a33.OrderedRoman.<ctor>@20
+3	edu.hm.gaertner.simon.lab23.a33.OrderedRoman.compareTo@43
+5	edu.hm.gaertner.simon.lab23.a33.OrderedRoman.equals@30
+1	edu.hm.gaertner.simon.lab23.a33.OrderedRoman.hashCode@25
 7	edu.hm.gaertner.simon.lab23.a33.RomanByFactors.compare@27
 3	edu.hm.gaertner.simon.lab23.a33.RomanLexicalOrder.compare@24
 3	edu.hm.gaertner.simon.lab23.a33.RomanTextLengthOrder.compare@21

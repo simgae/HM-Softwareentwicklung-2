@@ -1,12 +1,12 @@
-1:47:12 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
-1:47:12 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
-1:47:12 PM PIT >> INFO : Created 4 mutation test units in pre scan
-1:47:13 PM PIT >> INFO : Sending 1 test classes to minion
-1:47:13 PM PIT >> INFO : Sent tests to minion
-/-\|/-\|/-\|1:47:13 PM PIT >> INFO : Calculated coverage in 0 seconds.
-1:47:13 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
-1:47:13 PM PIT >> INFO : Created 4 mutation test units
-/-\|1:47:15 PM PIT >> INFO : Completed in 2 seconds
+2:59:38 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+2:59:38 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+2:59:38 PM PIT >> INFO : Created 4 mutation test units in pre scan
+2:59:39 PM PIT >> INFO : Sending 1 test classes to minion
+2:59:39 PM PIT >> INFO : Sent tests to minion
+/-\|/-\|/-\|2:59:39 PM PIT >> INFO : Calculated coverage in 0 seconds.
+2:59:39 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+2:59:39 PM PIT >> INFO : Created 4 mutation test units
+/-\|2:59:42 PM PIT >> INFO : Completed in 3 seconds
 ================================================================================
 - Mutators
 ================================================================================
@@ -59,15 +59,15 @@
 > scan classpath : < 1 second
 > coverage and dependency analysis : < 1 second
 > build mutation tests : < 1 second
-> run mutation analysis : 1 seconds
+> run mutation analysis : 2 seconds
 --------------------------------------------------------------------------------
-> Total  : 2 seconds
+> Total  : 3 seconds
 --------------------------------------------------------------------------------
 ================================================================================
 - Statistics
 ================================================================================
->> Line Coverage (for mutated classes only): 50/54 (93%)
+>> Line Coverage (for mutated classes only): 50/52 (96%)
 >> Generated 38 mutations Killed 20 (53%)
 >> Mutations with no coverage 0. Test strength 53%
->> Ran 53 tests (1.39 tests per mutation)
+>> Ran 61 tests (1.61 tests per mutation)
 Enhanced functionality available at https://www.arcmutate.com/
