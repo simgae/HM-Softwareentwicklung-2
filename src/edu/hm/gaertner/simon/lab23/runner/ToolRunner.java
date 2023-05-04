@@ -9,13 +9,13 @@ import java.io.IOException;
  */
 public class ToolRunner extends BaseToolRunner {
     @Override public String projectDir() {
-        return "C:\\Users\\simon\\OneDrive\\Desktop\\SE2\\sgaertne";
-        //return "C:\\Users\\User\\Desktop\\SE2\\sgaertne";
+        //return "C:\\Users\\simon\\OneDrive\\Desktop\\SE2\\sgaertne";
+        return "C:\\Users\\User\\Desktop\\SE2\\sgaertne";
     }
 
     @Override public String toolBundleDir() {
-        return "C:\\Users\\simon\\OneDrive\\Desktop\\SE2\\tool";
-        //return "C:\\Users\\User\\Desktop\\SE2\\tool";
+        //return "C:\\Users\\simon\\OneDrive\\Desktop\\SE2\\tool";
+        return "C:\\Users\\User\\Desktop\\SE2\\tool";
     }
 
     /** Hauptprogramm.

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StringCharsMain.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">edu.hm.gaertner.simon.lab23.a42</a> &gt; <span class="el_source">StringCharsMain.java</span></div><h1>StringCharsMain.java</h1><pre class="source lang-java linenums">package edu.hm.gaertner.simon.lab23.a42;
+import java.util.Iterator;
+import java.util.function.Supplier;
+
+/**
+ * Refactoring of StringCharsMain original class.
+ * @see &lt;a href=&quot;https://se.pages.gitlab.lrz.de/2023s/etc/lab/slide0033.html:&quot;&gt;...&lt;/a&gt;
+ */
+<span class="nc" id="L9">public class StringCharsMain {</span>
+
+    /**
+     * Main method.
+     * @param args - arguments - contain text which should be printed.
+     */
+    public static void main(String... args) {
+
+<span class="nc" id="L17">        final String text = args[0];</span>
+<span class="nc" id="L18">        final Supplier&lt;Iterator&lt;Character&gt;&gt; chars = () -&gt; new Iterator&lt;&gt;() {</span>
+
+            /**
+             * Current position of iterator.
+             */
+            private int position;
+
+            @Override
+            public boolean hasNext() {
+<span class="nc bnc" id="L27" title="All 2 branches missed.">                return position &lt; text.length();</span>
+            }
+
+            @Override
+            public Character next() {
+<span class="nc" id="L32">                final char result = text.charAt(position);</span>
+<span class="nc" id="L33">                position++;</span>
+<span class="nc" id="L34">                return result;</span>
+            }
+        };
+        
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        for (final Iterator&lt;Character&gt; slowIterator = chars.get(); slowIterator.hasNext(); ) {</span>
+<span class="nc" id="L39">            final char slow = slowIterator.next();</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">            for (final Iterator&lt;Character&gt; fastIterator = chars.get(); fastIterator.hasNext(); ) {</span>
+<span class="nc" id="L41">                final char fast = fastIterator.next();</span>
+<span class="nc" id="L42">                System.out.println(fast + &quot;/&quot; + slow);</span>
+<span class="nc" id="L43">            }</span>
+<span class="nc" id="L44">        }</span>
+<span class="nc" id="L45">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

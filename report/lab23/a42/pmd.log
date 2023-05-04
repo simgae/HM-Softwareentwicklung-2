@@ -1,0 +1,4 @@
+edu\hm\gaertner\simon\lab23\a42\StringCharsMain.java:18:	ExitLambdaAtEnd:	Exit lambda at the end
+edu\hm\gaertner\simon\lab23\a42\StringCharsMain.java:38:	ForLoopCanBeForeach:	This for loop can be replaced by a foreach loop
+edu\hm\gaertner\simon\lab23\a42\StringCharsMain.java:40:	ForLoopCanBeForeach:	This for loop can be replaced by a foreach loop
+* FAILED *

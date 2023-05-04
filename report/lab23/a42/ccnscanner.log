@@ -1,0 +1,6 @@
+types
+5	edu.hm.gaertner.simon.lab23.a42.StringCharsMain
+methods
+1	edu.hm.gaertner.simon.lab23.a42.StringCharsMain.hasNext@26
+3	edu.hm.gaertner.simon.lab23.a42.StringCharsMain.main@15
+1	edu.hm.gaertner.simon.lab23.a42.StringCharsMain.next@31

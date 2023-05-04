@@ -1,0 +1,12 @@
+3:27:20 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+3:27:20 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+3:27:20 PM PIT >> INFO : Created 0 mutation test units in pre scan
+Exception in thread "main" org.pitest.help.PitHelpError: No mutations found. This probably means there is an issue with either the supplied classpath or filters.
+See http://pitest.org for more details.
+	at org.pitest.mutationtest.tooling.MutationCoverage.checkMutationsFound(MutationCoverage.java:393)
+	at org.pitest.mutationtest.tooling.MutationCoverage.runReport(MutationCoverage.java:136)
+	at org.pitest.mutationtest.tooling.EntryPoint.execute(EntryPoint.java:129)
+	at org.pitest.mutationtest.tooling.EntryPoint.execute(EntryPoint.java:57)
+	at org.pitest.mutationtest.commandline.MutationCoverageReport.runReport(MutationCoverageReport.java:98)
+	at org.pitest.mutationtest.commandline.MutationCoverageReport.main(MutationCoverageReport.java:45)
+* FAILED *

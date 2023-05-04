@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"edu.hm.gaertner.simon.lab23.a41","c":"TriPredicate","l":"test(T, T, T)","u":"test(T,T,T)"}];updateSearchResults();
