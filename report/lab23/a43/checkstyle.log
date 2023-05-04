@@ -1,0 +1,6 @@
+Starting audit...
+[ERROR] C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a43\Troolean.java:33:27: '4' is a magic number. [MagicNumber]
+[ERROR] C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a43\Troolean.java:81:61: Unnecessary parentheses around lambda value. [UnnecessaryParentheses]
+Audit done.
+Checkstyle ends with 2 errors.
+* FAILED *

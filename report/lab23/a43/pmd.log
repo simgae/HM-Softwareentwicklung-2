@@ -1,0 +1,6 @@
+edu\hm\gaertner\simon\lab23\a43\Troolean.java:28:	ExpressionTooComplex:	Simplify expression by introducing temporary variables or helper methods
+edu\hm\gaertner\simon\lab23\a43\Troolean.java:33:	AvoidLiteralsInIfCondition:	Avoid using Literals in Conditional Statements
+edu\hm\gaertner\simon\lab23\a43\Troolean.java:46:	ShortVariable:	Avoid variables with short names like OR
+edu\hm\gaertner\simon\lab23\a43\Troolean.java:46:	ExpressionTooComplex:	Simplify expression by introducing temporary variables or helper methods
+edu\hm\gaertner\simon\lab23\a43\Troolean.java:62:	ExpressionTooComplex:	Simplify expression by introducing temporary variables or helper methods
+* FAILED *
