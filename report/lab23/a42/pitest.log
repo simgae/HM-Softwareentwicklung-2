@@ -1,12 +1,12 @@
-3:24:01 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
-3:24:01 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
-3:24:01 PM PIT >> INFO : Created 2 mutation test units in pre scan
-3:24:02 PM PIT >> INFO : Sending 1 test classes to minion
-3:24:02 PM PIT >> INFO : Sent tests to minion
-3:24:02 PM PIT >> INFO : Calculated coverage in 0 seconds.
-3:24:02 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
-3:24:02 PM PIT >> INFO : Created 2 mutation test units
-/-3:24:02 PM PIT >> INFO : Completed in 0 seconds
+5:43:16 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+5:43:17 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+5:43:17 PM PIT >> INFO : Created 2 mutation test units in pre scan
+5:43:17 PM PIT >> INFO : Sending 1 test classes to minion
+5:43:17 PM PIT >> INFO : Sent tests to minion
+5:43:17 PM PIT >> INFO : Calculated coverage in 0 seconds.
+5:43:17 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+5:43:17 PM PIT >> INFO : Created 2 mutation test units
+/-5:43:17 PM PIT >> INFO : Completed in 1 seconds
 ================================================================================
 - Mutators
 ================================================================================
