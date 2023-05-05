@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"edu.hm.gaertner.simon.lab23.a41","l":"TriPredicate"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"edu.hm.gaertner.simon.lab23.a41","l":"TriElement"},{"p":"edu.hm.gaertner.simon.lab23.a41","l":"TriPredicate"}];updateSearchResults();

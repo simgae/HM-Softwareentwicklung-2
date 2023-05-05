@@ -1,12 +1,67 @@
-3:27:20 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
-3:27:20 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
-3:27:20 PM PIT >> INFO : Created 0 mutation test units in pre scan
-Exception in thread "main" org.pitest.help.PitHelpError: No mutations found. This probably means there is an issue with either the supplied classpath or filters.
-See http://pitest.org for more details.
-	at org.pitest.mutationtest.tooling.MutationCoverage.checkMutationsFound(MutationCoverage.java:393)
-	at org.pitest.mutationtest.tooling.MutationCoverage.runReport(MutationCoverage.java:136)
-	at org.pitest.mutationtest.tooling.EntryPoint.execute(EntryPoint.java:129)
-	at org.pitest.mutationtest.tooling.EntryPoint.execute(EntryPoint.java:57)
-	at org.pitest.mutationtest.commandline.MutationCoverageReport.runReport(MutationCoverageReport.java:98)
-	at org.pitest.mutationtest.commandline.MutationCoverageReport.main(MutationCoverageReport.java:45)
-* FAILED *
+5:39:43 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+5:39:43 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+5:39:43 PM PIT >> INFO : Created 1 mutation test units in pre scan
+5:39:44 PM PIT >> INFO : Sending 1 test classes to minion
+5:39:44 PM PIT >> INFO : Sent tests to minion
+/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|5:39:44 PM PIT >> INFO : Calculated coverage in 0 seconds.
+5:39:44 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+5:39:44 PM PIT >> INFO : Created 1 mutation test units
+/5:39:47 PM PIT >> INFO : Completed in 3 seconds
+================================================================================
+- Mutators
+================================================================================
+> org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_ORDER_ELSE
+>> Generated 4 Killed 4 (100%)
+> KILLED 4 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator
+>> Generated 4 Killed 4 (100%)
+> KILLED 4 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator
+>> Generated 4 Killed 4 (100%)
+> KILLED 4 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_ELSE
+>> Generated 15 Killed 15 (100%)
+> KILLED 15 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_ORDER_IF
+>> Generated 4 Killed 4 (100%)
+> KILLED 4 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator_EQUAL_IF
+>> Generated 15 Killed 15 (100%)
+> KILLED 15 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+================================================================================
+- Timings
+================================================================================
+> pre-scan for mutations : < 1 second
+> scan classpath : < 1 second
+> coverage and dependency analysis : < 1 second
+> build mutation tests : < 1 second
+> run mutation analysis : 2 seconds
+--------------------------------------------------------------------------------
+> Total  : 3 seconds
+--------------------------------------------------------------------------------
+================================================================================
+- Statistics
+================================================================================
+>> Line Coverage (for mutated classes only): 4/5 (80%)
+>> Generated 46 mutations Killed 46 (100%)
+>> Mutations with no coverage 0. Test strength 100%
+>> Ran 127 tests (2.76 tests per mutation)
+Enhanced functionality available at https://www.arcmutate.com/
