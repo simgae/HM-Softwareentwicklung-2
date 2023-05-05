@@ -1,2 +1,15 @@
 edu\hm\gaertner\simon\lab23\a44\ListOps.java:32:	AvoidThrowingRawExceptionTypes:	Avoid throwing raw exception types.
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:17:	ShortVariable:	Avoid variables with short names like x
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:17:	ShortVariable:	Avoid variables with short names like y
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:18:	ShortVariable:	Avoid variables with short names like x
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:18:	ShortVariable:	Avoid variables with short names like y
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:24:	ShortVariable:	Avoid variables with short names like p
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:24:	ShortVariable:	Avoid variables with short names like x
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:26:	ShortVariable:	Avoid variables with short names like x
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:36:	ExpressionTooComplex:	Simplify expression by introducing temporary variables or helper methods
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:36:	ExpressionTooComplex:	Simplify expression by introducing temporary variables or helper methods
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:36:	ExpressionTooComplex:	Simplify expression by introducing temporary variables or helper methods
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:42:	ShortVariable:	Avoid variables with short names like x
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:43:	ShortVariable:	Avoid variables with short names like x
+edu\hm\gaertner\simon\lab23\a44\ListOpsDemo.java:44:	ShortVariable:	Avoid variables with short names like x
 * FAILED *

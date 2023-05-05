@@ -1,6 +1,5 @@
 Starting audit...
-[ERROR] C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a44\ListOps.java:170:60: '5' is a magic number. [MagicNumber]
-[ERROR] C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a44\ListOps.java:171:60: '5' is a magic number. [MagicNumber]
+[ERROR] C:\Users\User\Desktop\SE2\sgaertne\src\edu\hm\gaertner\simon\lab23\a44\ListOps.java:45:11: Variable 'fst' should be declared final. [FinalLocalVariable]
 Audit done.
-Checkstyle ends with 2 errors.
+Checkstyle ends with 1 errors.
 * FAILED *

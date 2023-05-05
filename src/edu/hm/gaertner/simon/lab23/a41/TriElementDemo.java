@@ -1,4 +1,4 @@
-package edu.hm.gaertner.simon.lab23.demo;
+package edu.hm.gaertner.simon.lab23.a41;
 
 import static edu.hm.gaertner.simon.lab23.a41.TriElement.*;
 

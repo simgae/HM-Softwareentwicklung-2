@@ -19,9 +19,9 @@ public record ListOps&lt;T&gt;(List&lt;T&gt; elements) {
      *
      * @param elements elements for list.
      */
-<span class="nc" id="L22">    public ListOps(List&lt;T&gt; elements) {</span>
-<span class="nc" id="L23">        this.elements = new ArrayList&lt;&gt;(elements);</span>
-<span class="nc" id="L24">    }</span>
+<span class="fc" id="L22">    public ListOps(List&lt;T&gt; elements) {</span>
+<span class="fc" id="L23">        this.elements = new ArrayList&lt;&gt;(elements);</span>
+<span class="fc" id="L24">    }</span>
 
     /**
      * Disable getter for elements.
@@ -29,7 +29,7 @@ public record ListOps&lt;T&gt;(List&lt;T&gt; elements) {
      * @return noting.
      */
     public List&lt;T&gt; elements() {
-<span class="nc" id="L32">        throw new RuntimeException();</span>
+<span class="fc" id="L32">        throw new RuntimeException();</span>
     }
 
     /**
@@ -41,24 +41,23 @@ public record ListOps&lt;T&gt;(List&lt;T&gt; elements) {
      */
     public T fold(int startIndex, BinaryOperator&lt;T&gt; operator) {
 
-<span class="nc" id="L44">        T result = null;</span>
-<span class="nc" id="L45">        T fst = null;</span>
+        T result;
+        T fst;
 
-<span class="nc bnc" id="L47" title="All 2 branches missed.">        if (startIndex &lt; elements.size()) {</span>
-<span class="nc" id="L48">            fst = elements.get(startIndex);</span>
-<span class="nc" id="L49">            result = fst;</span>
-        }
-<span class="nc bnc" id="L51" title="All 2 branches missed.">        if (startIndex &lt; elements.size() - 1) {</span>
-<span class="nc" id="L52">            final T snd = elements.get(startIndex + 1);</span>
-<span class="nc" id="L53">            result = operator.apply(fst, snd);</span>
-        }
+<span class="fc" id="L47">        fst = elements.get(startIndex);</span>
+<span class="fc" id="L48">        result = fst;</span>
 
-
-<span class="nc bnc" id="L57" title="All 2 branches missed.">        for (int index = startIndex + 2; index &lt; elements.size(); index++) {</span>
-<span class="nc" id="L58">            result = operator.apply(result, elements.get(index));</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (startIndex &lt; elements.size() - 1) {</span>
+<span class="fc" id="L51">            final T snd = elements.get(startIndex + 1);</span>
+<span class="fc" id="L52">            result = operator.apply(fst, snd);</span>
         }
 
-<span class="nc" id="L61">        return result;</span>
+
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        for (int index = startIndex + 2; index &lt; elements.size(); index++) {</span>
+<span class="fc" id="L57">            result = operator.apply(result, elements.get(index));</span>
+        }
+
+<span class="fc" id="L60">        return result;</span>
 
     }
 
@@ -69,13 +68,13 @@ public record ListOps&lt;T&gt;(List&lt;T&gt; elements) {
      * @return ListOps with all results.
      */
     public ListOps&lt;T&gt; spread(Function&lt;T, List&lt;T&gt;&gt; operator) {
-<span class="nc" id="L72">        final List&lt;T&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L71">        final List&lt;T&gt; result = new ArrayList&lt;&gt;();</span>
 
-<span class="nc bnc" id="L74" title="All 2 branches missed.">        for (T element : elements) {</span>
-<span class="nc" id="L75">            result.addAll(operator.apply(element));</span>
-<span class="nc" id="L76">        }</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        for (T element : elements) {</span>
+<span class="fc" id="L74">            result.addAll(operator.apply(element));</span>
+<span class="fc" id="L75">        }</span>
 
-<span class="nc" id="L78">        return new ListOps&lt;&gt;(result);</span>
+<span class="fc" id="L77">        return new ListOps&lt;&gt;(result);</span>
     }
 
     /**
@@ -86,13 +85,13 @@ public record ListOps&lt;T&gt;(List&lt;T&gt; elements) {
      */
     public ListOps&lt;T&gt; moved(BinaryOperator&lt;Integer&gt; operator) {
 
-<span class="nc" id="L89">        final List&lt;T&gt; storage = new ArrayList&lt;&gt;(elements);</span>
+<span class="fc" id="L88">        final List&lt;T&gt; storage = new ArrayList&lt;&gt;(elements);</span>
 
-<span class="nc bnc" id="L91" title="All 2 branches missed.">        for (T element : elements) {</span>
-<span class="nc" id="L92">            storage.set(operator.apply(elements.size(), elements.indexOf(element)), element);</span>
-<span class="nc" id="L93">        }</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">        for (T element : elements) {</span>
+<span class="fc" id="L91">            storage.set(operator.apply(elements.size(), elements.indexOf(element)), element);</span>
+<span class="fc" id="L92">        }</span>
 
-<span class="nc" id="L95">        return new ListOps&lt;T&gt;(storage);</span>
+<span class="fc" id="L94">        return new ListOps&lt;T&gt;(storage);</span>
 
     }
 
@@ -106,69 +105,25 @@ public record ListOps&lt;T&gt;(List&lt;T&gt; elements) {
      */
     public boolean are(Which amount, Predicate&lt;T&gt; operator) {
         boolean result;
-<span class="nc" id="L109">        int counter = 0;</span>
+<span class="fc" id="L108">        int counter = 0;</span>
 
-<span class="nc bnc" id="L111" title="All 2 branches missed.">        for (T element : elements) {</span>
-<span class="nc" id="L112">            result = operator.test(element);</span>
-<span class="nc bnc" id="L113" title="All 2 branches missed.">            if (result)</span>
-<span class="nc" id="L114">                counter++;</span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">        for (T element : elements) {</span>
+<span class="fc" id="L111">            result = operator.test(element);</span>
+<span class="fc bfc" id="L112" title="All 2 branches covered.">            if (result)</span>
+<span class="fc" id="L113">                counter++;</span>
 
-<span class="nc" id="L116">        }</span>
+<span class="fc" id="L115">        }</span>
 
-<span class="nc bnc" id="L118" title="All 4 branches missed.">        if (amount.equals(Which.ALL) &amp;&amp; counter == elements.size())</span>
-<span class="nc" id="L119">            result = true;</span>
-<span class="nc bnc" id="L120" title="All 4 branches missed.">        else if (amount.equals(Which.SOME) &amp;&amp; counter &gt; 0)</span>
-<span class="nc" id="L121">            result = true;</span>
+<span class="fc bfc" id="L117" title="All 4 branches covered.">        if (amount.equals(Which.ALL) &amp;&amp; counter == elements.size())</span>
+<span class="fc" id="L118">            result = true;</span>
+<span class="fc bfc" id="L119" title="All 4 branches covered.">        else if (amount.equals(Which.SOME) &amp;&amp; counter &gt; 0)</span>
+<span class="fc" id="L120">            result = true;</span>
         else
-<span class="nc bnc" id="L123" title="All 4 branches missed.">            result = amount.equals(Which.NONE) &amp;&amp; counter == 0;</span>
+<span class="fc bfc" id="L122" title="All 4 branches covered.">            result = amount.equals(Which.NONE) &amp;&amp; counter == 0;</span>
 
 
-<span class="nc" id="L126">        return result;</span>
+<span class="fc" id="L125">        return result;</span>
     }
 
-}
-
-/**
- * Demo class to test ListOps.
- */
-@SuppressWarnings({&quot;PMD&quot;, &quot;CHECKSTYLE&quot;})
-class ListOpsDemo {
-
-    /**
-     * Main method for testing.
-     *
-     * @param args - arguments.
-     */
-    public static void main(String[] args) {
-        final ListOps&lt;Integer&gt; lops = new ListOps&lt;&gt;(List.of(1, 2, 3, 4, 5));
-        System.out.println(lops.fold(0, (x, y) -&gt; x + y));  // 15 = Summe der Elemente
-        System.out.println(lops.fold(1, (x, y) -&gt; x * y));  // 120 = Produkt der Elemente
-
-        System.out.println(&quot;__________________________________________________&quot;);
-
-
-        final ListOps&lt;String&gt; test1 = new ListOps&lt;&gt;(List.of(&quot;Abra&quot;, &quot;ka&quot;, &quot;dabra&quot;));
-        final ListOps&lt;String&gt; p = test1.spread(x -&gt; List.of(x.substring(0, 1), x.substring(1)));
-        System.out.println(p); // [A, bra, k, a, d, abra]
-        System.out.println(p.spread(x -&gt; x.length() &gt; 1 ? List.of(x) : List.of())); // [bra, abra]
-
-        System.out.println(&quot;__________________________________________________&quot;);
-
-        final ListOps&lt;Integer&gt; test2 = new ListOps&lt;&gt;(List.of(1, 2, 3, 4, 5, 6));
-
-        System.out.println(test2.moved((length, index) -&gt; length - 1 - index));  // [6, 5, 4, 3, 2, 1]
-
-        System.out.println(test2.moved((length, index) -&gt; (index + 1) % length));  // 6, 1, 2, 3, 4, 5
-
-        System.out.println(test2.moved((length, index) -&gt; index % 2 == 0 ? (index + 1) % length : (index + length - 1) % length));  // 2, 1, 4, 3, 6, 5
-
-        System.out.println(test2.moved((length, index) -&gt; (index + length / 2) % length));  // 4, 5, 6, 1, 2, 3
-
-        System.out.println(&quot;__________________________________________________&quot;);
-        final ListOps&lt;Integer&gt; test3 = new ListOps&lt;&gt;(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
-        System.out.println(test3.are(Which.ALL, x -&gt; x &gt; 0)); // true
-        System.out.println(test3.are(Which.NONE, x -&gt; x == 5)); // false
-        System.out.println(test3.are(Which.SOME, x -&gt; x == 5)); // true
-    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

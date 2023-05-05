@@ -2,8 +2,6 @@ package edu.hm.gaertner.simon.lab23.a43;
 
 import org.junit.Test;
 
-import javax.print.attribute.standard.MediaSize;
-
 import static org.junit.Assert.*;
 import static edu.hm.gaertner.simon.lab23.a43.Troolean.*;
 
