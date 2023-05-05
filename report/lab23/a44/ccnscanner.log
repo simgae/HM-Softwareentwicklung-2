@@ -1,0 +1,11 @@
+types
+18	edu.hm.gaertner.simon.lab23.a44.ListOps
+3	edu.hm.gaertner.simon.lab23.a44.ListOpsDemo
+methods
+1	edu.hm.gaertner.simon.lab23.a44.ListOps.<ctor>@22
+8	edu.hm.gaertner.simon.lab23.a44.ListOps.are@107
+1	edu.hm.gaertner.simon.lab23.a44.ListOps.elements@31
+4	edu.hm.gaertner.simon.lab23.a44.ListOps.fold@42
+2	edu.hm.gaertner.simon.lab23.a44.ListOps.moved@87
+2	edu.hm.gaertner.simon.lab23.a44.ListOps.spread@71
+3	edu.hm.gaertner.simon.lab23.a44.ListOpsDemo.main@142

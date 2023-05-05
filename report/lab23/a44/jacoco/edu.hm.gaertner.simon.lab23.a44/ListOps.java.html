@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ListOps.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">edu.hm.gaertner.simon.lab23.a44</a> &gt; <span class="el_source">ListOps.java</span></div><h1>ListOps.java</h1><pre class="source lang-java linenums">package edu.hm.gaertner.simon.lab23.a44;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+/**
+ * List operations.
+ *
+ * @param elements for list.
+ * @param &lt;T&gt;      type of elements.
+ */
+public record ListOps&lt;T&gt;(List&lt;T&gt; elements) {
+
+    /**
+     * Create a ctor - to copy transmitted list - prevent aliasing.
+     *
+     * @param elements elements for list.
+     */
+<span class="nc" id="L22">    public ListOps(List&lt;T&gt; elements) {</span>
+<span class="nc" id="L23">        this.elements = new ArrayList&lt;&gt;(elements);</span>
+<span class="nc" id="L24">    }</span>
+
+    /**
+     * Disable getter for elements.
+     *
+     * @return noting.
+     */
+    public List&lt;T&gt; elements() {
+<span class="nc" id="L32">        throw new RuntimeException();</span>
+    }
+
+    /**
+     * Do operation on elements after start index.
+     *
+     * @param startIndex define where the operation should start.
+     * @param operator   - operation on elements.
+     * @return result of operation.
+     */
+    public T fold(int startIndex, BinaryOperator&lt;T&gt; operator) {
+
+<span class="nc" id="L44">        T result = null;</span>
+<span class="nc" id="L45">        T fst = null;</span>
+
+<span class="nc bnc" id="L47" title="All 2 branches missed.">        if (startIndex &lt; elements.size()) {</span>
+<span class="nc" id="L48">            fst = elements.get(startIndex);</span>
+<span class="nc" id="L49">            result = fst;</span>
+        }
+<span class="nc bnc" id="L51" title="All 2 branches missed.">        if (startIndex &lt; elements.size() - 1) {</span>
+<span class="nc" id="L52">            final T snd = elements.get(startIndex + 1);</span>
+<span class="nc" id="L53">            result = operator.apply(fst, snd);</span>
+        }
+
+
+<span class="nc bnc" id="L57" title="All 2 branches missed.">        for (int index = startIndex + 2; index &lt; elements.size(); index++) {</span>
+<span class="nc" id="L58">            result = operator.apply(result, elements.get(index));</span>
+        }
+
+<span class="nc" id="L61">        return result;</span>
+
+    }
+
+    /**
+     * Apply a list of functions on one variable.
+     *
+     * @param operator List of functions. -&gt; return a list
+     * @return ListOps with all results.
+     */
+    public ListOps&lt;T&gt; spread(Function&lt;T, List&lt;T&gt;&gt; operator) {
+<span class="nc" id="L72">        final List&lt;T&gt; result = new ArrayList&lt;&gt;();</span>
+
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        for (T element : elements) {</span>
+<span class="nc" id="L75">            result.addAll(operator.apply(element));</span>
+<span class="nc" id="L76">        }</span>
+
+<span class="nc" id="L78">        return new ListOps&lt;&gt;(result);</span>
+    }
+
+    /**
+     * Move the content in one list to another index.
+     *
+     * @param operator - define the movement.
+     * @return new list with the moved parameters.
+     */
+    public ListOps&lt;T&gt; moved(BinaryOperator&lt;Integer&gt; operator) {
+
+<span class="nc" id="L89">        final List&lt;T&gt; storage = new ArrayList&lt;&gt;(elements);</span>
+
+<span class="nc bnc" id="L91" title="All 2 branches missed.">        for (T element : elements) {</span>
+<span class="nc" id="L92">            storage.set(operator.apply(elements.size(), elements.indexOf(element)), element);</span>
+<span class="nc" id="L93">        }</span>
+
+<span class="nc" id="L95">        return new ListOps&lt;T&gt;(storage);</span>
+
+    }
+
+
+    /**
+     * Check how many items match one criteria.
+     *
+     * @param amount   - how many items should match.
+     * @param operator - criteria.
+     * @return yes if the amount of matched items are equal to the enum amount.
+     */
+    public boolean are(Which amount, Predicate&lt;T&gt; operator) {
+        boolean result;
+<span class="nc" id="L109">        int counter = 0;</span>
+
+<span class="nc bnc" id="L111" title="All 2 branches missed.">        for (T element : elements) {</span>
+<span class="nc" id="L112">            result = operator.test(element);</span>
+<span class="nc bnc" id="L113" title="All 2 branches missed.">            if (result)</span>
+<span class="nc" id="L114">                counter++;</span>
+
+<span class="nc" id="L116">        }</span>
+
+<span class="nc bnc" id="L118" title="All 4 branches missed.">        if (amount.equals(Which.ALL) &amp;&amp; counter == elements.size())</span>
+<span class="nc" id="L119">            result = true;</span>
+<span class="nc bnc" id="L120" title="All 4 branches missed.">        else if (amount.equals(Which.SOME) &amp;&amp; counter &gt; 0)</span>
+<span class="nc" id="L121">            result = true;</span>
+        else
+<span class="nc bnc" id="L123" title="All 4 branches missed.">            result = amount.equals(Which.NONE) &amp;&amp; counter == 0;</span>
+
+
+<span class="nc" id="L126">        return result;</span>
+    }
+
+}
+
+/**
+ * Demo class to test ListOps.
+ */
+@SuppressWarnings({&quot;PMD&quot;, &quot;CHECKSTYLE&quot;})
+class ListOpsDemo {
+
+    /**
+     * Main method for testing.
+     *
+     * @param args - arguments.
+     */
+    public static void main(String[] args) {
+        final ListOps&lt;Integer&gt; lops = new ListOps&lt;&gt;(List.of(1, 2, 3, 4, 5));
+        System.out.println(lops.fold(0, (x, y) -&gt; x + y));  // 15 = Summe der Elemente
+        System.out.println(lops.fold(1, (x, y) -&gt; x * y));  // 120 = Produkt der Elemente
+
+        System.out.println(&quot;__________________________________________________&quot;);
+
+
+        final ListOps&lt;String&gt; test1 = new ListOps&lt;&gt;(List.of(&quot;Abra&quot;, &quot;ka&quot;, &quot;dabra&quot;));
+        final ListOps&lt;String&gt; p = test1.spread(x -&gt; List.of(x.substring(0, 1), x.substring(1)));
+        System.out.println(p); // [A, bra, k, a, d, abra]
+        System.out.println(p.spread(x -&gt; x.length() &gt; 1 ? List.of(x) : List.of())); // [bra, abra]
+
+        System.out.println(&quot;__________________________________________________&quot;);
+
+        final ListOps&lt;Integer&gt; test2 = new ListOps&lt;&gt;(List.of(1, 2, 3, 4, 5, 6));
+
+        System.out.println(test2.moved((length, index) -&gt; length - 1 - index));  // [6, 5, 4, 3, 2, 1]
+
+        System.out.println(test2.moved((length, index) -&gt; (index + 1) % length));  // 6, 1, 2, 3, 4, 5
+
+        System.out.println(test2.moved((length, index) -&gt; index % 2 == 0 ? (index + 1) % length : (index + length - 1) % length));  // 2, 1, 4, 3, 6, 5
+
+        System.out.println(test2.moved((length, index) -&gt; (index + length / 2) % length));  // 4, 5, 6, 1, 2, 3
+
+        System.out.println(&quot;__________________________________________________&quot;);
+        final ListOps&lt;Integer&gt; test3 = new ListOps&lt;&gt;(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+        System.out.println(test3.are(Which.ALL, x -&gt; x &gt; 0)); // true
+        System.out.println(test3.are(Which.NONE, x -&gt; x == 5)); // false
+        System.out.println(test3.are(Which.SOME, x -&gt; x == 5)); // true
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
