@@ -1,5 +1,7 @@
 package edu.hm.gaertner.simon.lab23.a44;
 
+import edu.hm.cs.rs.se.ss23.Xmark;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BinaryOperator;
@@ -12,6 +14,7 @@ import java.util.function.Predicate;
  * @param elements for list.
  * @param <T>      type of elements.
  */
+@Xmark("a44")
 public record ListOps<T>(List<T> elements) {
 
     /**

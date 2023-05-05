@@ -1,5 +1,7 @@
 package edu.hm.gaertner.simon.lab23.a43;
 
+import edu.hm.cs.rs.se.ss23.Xmark;
+
 import java.util.function.BinaryOperator;
 import java.util.function.UnaryOperator;
 
@@ -15,6 +17,7 @@ import java.util.function.UnaryOperator;
  *
  * I THINK HERE IS A MISTAKE IN THE TABLE!
  */
+@Xmark("a43")
 public enum Troolean {
 
     /**

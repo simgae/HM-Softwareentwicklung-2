@@ -1,4 +1,6 @@
 package edu.hm.gaertner.simon.lab23.a42;
+import edu.hm.cs.rs.se.ss23.Xmark;
+
 import java.util.Iterator;
 import java.util.function.Supplier;
 
@@ -6,6 +8,7 @@ import java.util.function.Supplier;
  * Refactoring of StringCharsMain original class.
  * @see <a href="https://se.pages.gitlab.lrz.de/2023s/etc/lab/slide0033.html:">...</a>
  */
+@Xmark("a42")
 public class StringCharsMain {
 
     /**

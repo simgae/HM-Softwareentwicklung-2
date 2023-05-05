@@ -1,5 +1,7 @@
 package edu.hm.gaertner.simon.lab23.a41;
 
+import edu.hm.cs.rs.se.ss23.Xmark;
+
 import java.util.Objects;
 
 /**
@@ -7,6 +9,7 @@ import java.util.Objects;
  * Demo-File:
  * @see edu/hm/gaertner/simon/lab23/demo/TriElementDemo.java
  */
+@Xmark("a41")
 public class TriElement {
 
     /*
