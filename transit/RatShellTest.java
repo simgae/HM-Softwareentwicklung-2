@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.junit.rules.Timeout;
 
 /**
- * @version 2023-03-22
+ * @version 2023-03-25
  */
 public class RatShellTest {
     @Rule public Timeout globalTimeout = Timeout.millis(1_000);

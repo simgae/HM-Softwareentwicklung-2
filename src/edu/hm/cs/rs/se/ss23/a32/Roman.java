@@ -2,18 +2,21 @@ package edu.hm.cs.rs.se.ss23.a32;
 
 import java.util.List;
 
-/** Eine roemische Zahl.
+/**
+ * Eine roemische Zahl.
  * Der Ctor ist kuenstlich gebremst.
  * @author R. Schiedermeier, rs@cs.hm.edu
- * @version 2023-04-08
+ * @version 2023-04-23
  */
 public class Roman {
-    /** Ein roemisches Zahlenzeichen.
+    /**
+     * Ein roemisches Zahlenzeichen.
      * @param written Textschreibweise.
-     * @param value Rechenwert.
+     * @param value   Rechenwert.
      */
     private record Literal(String written, int value) {
-        /** {@return Test ob dieses Zahlenzeichen nur einmal vorkommen darf.}
+        /**
+         * {@return Test ob dieses Zahlenzeichen nur einmal vorkommen darf.}
          */
         boolean subtractive() {
             return written.length() > 1;
@@ -42,7 +45,7 @@ public class Roman {
     private String text;
 
     /** Verzoegerung beim Erzeugen neuer Objekte. */ {
-        final int delayMillis = Integer.parseInt(System.getProperty("delay", "0"));
+        final int delayMillis = Integer.parseInt(System.getProperty("delay", "3000"));
         try {
             Thread.sleep(delayMillis);
         } catch(InterruptedException interruptedException) {
@@ -50,7 +53,8 @@ public class Roman {
         }
     }
 
-    /** Roemische Zahl mit dem gegebenen Wert.
+    /**
+     * Roemische Zahl mit dem gegebenen Wert.
      * @param number Zahlenwert. Wenigstens 1.
      */
     public Roman(int number) {
@@ -67,7 +71,8 @@ public class Roman {
         assert !text.isEmpty();
     }
 
-    /** Roemische Zahl mit dem gegebenen Schreibweise..
+    /**
+     * Roemische Zahl mit dem gegebenen Schreibweise..
      * @param number Textdarstellung. Nicht null und synatktisch korrekt.
      * @throws IllegalArgumentException wenn ein Substring kein Zahlenzeichen ist..
      * @throws IllegalArgumentException wenn ein subtraktives Zahlenzeichen mehrmals vorkommt.
@@ -102,4 +107,15 @@ public class Roman {
         return text;
     }
 
+    @Override public boolean equals(Object that) {
+        return that instanceof Roman roman && roman.number() == number();
+    }
+
+    @Override public int hashCode() {
+        return number;
+    }
+
+    @Override public String toString() {
+        return text + "/" + number;
+    }
 }

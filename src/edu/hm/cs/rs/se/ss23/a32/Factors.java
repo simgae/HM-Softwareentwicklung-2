@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/** Faktoren einer Zahl.
+/**
+ * Faktoren einer Zahl.
  * @author R. Schiedermeier, rs@cs.hm.edu
- * @version 2023-04-08
+ * @version 2023-04-23
  */
 public interface Factors {
-    /** {@return Liste der Primfaktoren, aufsteigend sortiert.}
+    /**
+     * {@return Liste der Primfaktoren, aufsteigend sortiert.}
      * Wenigstens 1 Faktor.
      * @param number Zahl, die die Methode faktorisiert. Wenigstens 2.
      */
@@ -18,6 +20,7 @@ public interface Factors {
             throw new IllegalArgumentException("at least 2 required, got: " + number);
         List<Integer> factors = new ArrayList<>();
         int factor = 2;
+        
         while(number > 1)
             if(number%factor == 0) {
                 factors.add(number);
@@ -25,8 +28,11 @@ public interface Factors {
             }
             else
                 factor++;
+
+         
         assert !factors.isEmpty(): "at least 1 factor";
         assert factors.get(0) > 1: "min factor is 2";
+        assert factors.stream().reduce(1, (x, y) -> x*y) == number: "factors product equals number";
         return Collections.unmodifiableList(factors);
     }
 }

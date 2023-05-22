@@ -1,6 +1,6 @@
 /** Demoprogramm. Gehoert nicht zur Loesung.
  * Praktikum SE2, SS2023 (Schiedermeier).
- * @version 2023-03-22
+ * @version 2023-05-15
  */
 class TacDemo {
     /** Demoprogramm.

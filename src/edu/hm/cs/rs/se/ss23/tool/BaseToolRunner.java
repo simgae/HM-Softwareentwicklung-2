@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 
 /** Aufruf der Werkzeuge, alle nacheinander.
  * @author Reinhard Schiedermeier, rs@cs.hm.edu
- * @version 2023-04-15
+ * @version 2023-05-03
  */
 @SuppressWarnings({"PMD.NPathComplexity", // bug im PMD 6.55 => Integer.MAX_VALUE
         "checkstyle:DescendantToken"}) // Pfade unabhaengig, kein Zusammenfassen moeglich
@@ -312,6 +312,7 @@ public abstract class BaseToolRunner {
      *             Strings, die mit ! beginnen, muessen fehlen.
      */
     private Stream<String> findFiles(Path dir, String... subs) throws IOException {
+        final int baseLength = dir.toString().length();
         return Files.walk(dir)
                 .filter(Files::isRegularFile)
                 .filter(Files::isReadable)
@@ -319,11 +320,11 @@ public abstract class BaseToolRunner {
                 .filter(file -> Stream.of(subs)
                         .filter(sub -> sub.startsWith("!"))
                         .map(sub -> sub.substring(1))
-                        .noneMatch(file::contains))
+                        .noneMatch(file.substring(baseLength)::contains))
                 .filter(file -> Stream.of(subs)
                         .filter(Predicate.not(String::isEmpty))
                         .filter(Predicate.not(sub -> sub.startsWith("!")))
-                        .allMatch(file::contains));
+                        .allMatch(file.substring(baseLength)::contains));
     }
 
     private String pathCat(Path... paths) {
@@ -337,12 +338,13 @@ public abstract class BaseToolRunner {
     }
 
     private Stream<String> findDirs(Path dir, String... subs) throws IOException {
+        final int baseLength = dir.toString().length();
         return Files.walk(dir)
                 .filter(Files::isDirectory)
                 .map(Path::toString)
                 .filter(file -> Stream.of(subs)
                         .filter(Predicate.not(String::isEmpty))
-                        .allMatch(file::contains))
+                        .allMatch(file.substring(baseLength)::contains))
                 .filter(Predicate.not(adir -> adir.contains(Path.of("edu", "hm", "cs", "rs").toString())));
     }
 

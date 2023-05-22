@@ -1,5 +1,5 @@
+// import edu.hm.cs.rs.se.ss23.a511.MostFrequent;
 import static org.junit.Assert.assertEquals;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 /** Tests.
  * Praktikum SE2, SS2023 (Schiedermeier).
- * @version 2023-03-22
+ * @version 2023-05-15
  */
 public class MostFrequentTest {
     @Rule public Timeout globalTimeout = Timeout.millis(1_000);
@@ -99,7 +99,7 @@ public class MostFrequentTest {
         assertEquals(want, have);
     }
 
-    @Ignore @Test public void tooSlow() {
+    @Test public void tooSlow() {
         // arrange
         final int zeroes = 1_000_000;
         final MostFrequent want = new MostFrequent(0, zeroes);
@@ -112,7 +112,7 @@ public class MostFrequentTest {
         assertEquals(want, have);
     }
 
-    @Ignore @Test public void interleaved() {
+    @Test public void interleaved() {
         // arrange
         final int zeroes = 1_000_000;
         final MostFrequent want = new MostFrequent(0, zeroes);
