@@ -59,7 +59,7 @@ public record MostFrequent(int value, int occurrences) {
                 .stream().max(Map.Entry.comparingByValue())
                 .get();
 
-        return new MostFrequent(result.getKey(), result.getValue());
+        return new MostFrequent(array[result.getKey()], result.getValue());
     }
 
     public static void main(String[] args) {
