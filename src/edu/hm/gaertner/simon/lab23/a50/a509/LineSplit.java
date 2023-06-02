@@ -1,4 +1,4 @@
-package edu.hm.gaertner.simon.lab23.a509;
+package edu.hm.gaertner.simon.lab23.a50.a509;
 
 import java.util.ArrayList;
 import java.util.List;

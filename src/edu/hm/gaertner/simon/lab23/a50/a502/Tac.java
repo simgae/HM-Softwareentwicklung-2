@@ -1,4 +1,4 @@
-package edu.hm.gaertner.simon.lab23.a502;
+package edu.hm.gaertner.simon.lab23.a50.a502;
 
 import java.util.Objects;
 
@@ -30,7 +30,7 @@ public class Tac {
 
 
     public static void main(String[] args) {
-        edu.hm.gaertner.simon.lab23.a502.Tac.main("""
+        Tac.main("""
                  Anfang
                  Mitte
                  Ende

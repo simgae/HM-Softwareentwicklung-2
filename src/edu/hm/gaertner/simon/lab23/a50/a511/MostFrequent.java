@@ -1,4 +1,4 @@
-package edu.hm.gaertner.simon.lab23.a511;
+package edu.hm.gaertner.simon.lab23.a50.a511;
 
 
 import java.util.Map;

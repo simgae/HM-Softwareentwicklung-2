@@ -1,4 +1,4 @@
-package edu.hm.gaertner.simon.lab23.a500;
+package edu.hm.gaertner.simon.lab23.a50.a500;
 
 import java.util.Collections;
 

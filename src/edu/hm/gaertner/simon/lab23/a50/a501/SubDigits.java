@@ -1,4 +1,4 @@
-package edu.hm.gaertner.simon.lab23.a501;
+package edu.hm.gaertner.simon.lab23.a50.a501;
 
 import java.util.stream.IntStream;
 

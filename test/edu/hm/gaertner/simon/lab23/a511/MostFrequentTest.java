@@ -1,5 +1,6 @@
 package edu.hm.gaertner.simon.lab23.a511;
 
+import edu.hm.gaertner.simon.lab23.a50.a511.MostFrequent;
 import org.junit.Test;
 
 import java.util.NoSuchElementException;
@@ -14,11 +15,11 @@ public class MostFrequentTest {
 
     @Test public void only1Element() {
         // arrange
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent want = new edu.hm.gaertner.simon.lab23.a511.MostFrequent(1, 1);
+        final MostFrequent want = new MostFrequent(1, 1);
         final int[] array = {1};
 
         // act
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent have = edu.hm.gaertner.simon.lab23.a511.MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.scan(array);
 
         // assert
         assertEquals(want, have);
@@ -26,11 +27,11 @@ public class MostFrequentTest {
 
     @Test public void distinctElements() {
         // arrange
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent want = new edu.hm.gaertner.simon.lab23.a511.MostFrequent(1, 1);
+        final MostFrequent want = new MostFrequent(1, 1);
         final int[] array = {1, 2, 3};
 
         // act
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent have = edu.hm.gaertner.simon.lab23.a511.MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.scan(array);
 
         // assert
         assertEquals(want, have);
@@ -38,11 +39,11 @@ public class MostFrequentTest {
 
     @Test public void firstWins() {
         // arrange
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent want = new edu.hm.gaertner.simon.lab23.a511.MostFrequent(1, 2);
+        final MostFrequent want = new MostFrequent(1, 2);
         final int[] array = {1, 1, 2, 2};
 
         // act
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent have = edu.hm.gaertner.simon.lab23.a511.MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.scan(array);
 
         // assert
         assertEquals(want, have);
@@ -50,11 +51,11 @@ public class MostFrequentTest {
 
     @Test public void winnerAtFront() {
         // arrange
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent want = new edu.hm.gaertner.simon.lab23.a511.MostFrequent(1, 2);
+        final MostFrequent want = new MostFrequent(1, 2);
         final int[] array = {1, 1, 2};
 
         // act
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent have = edu.hm.gaertner.simon.lab23.a511.MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.scan(array);
 
         // assert
         assertEquals(want, have);
@@ -62,11 +63,11 @@ public class MostFrequentTest {
 
     @Test public void winnerAtEnd() {
         // arrange
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent want = new edu.hm.gaertner.simon.lab23.a511.MostFrequent(1, 2);
+        final MostFrequent want = new MostFrequent(1, 2);
         final int[] array = {2, 1, 1};
 
         // act
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent have = edu.hm.gaertner.simon.lab23.a511.MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.scan(array);
 
         // assert
         assertEquals(want, have);
@@ -74,11 +75,11 @@ public class MostFrequentTest {
 
     @Test public void winnerInside() {
         // arrange
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent want = new edu.hm.gaertner.simon.lab23.a511.MostFrequent(1, 2);
+        final MostFrequent want = new MostFrequent(1, 2);
         final int[] array = {2, 1, 1, 3};
 
         // act
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent have = edu.hm.gaertner.simon.lab23.a511.MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.scan(array);
 
         // assert
         assertEquals(want, have);
@@ -87,27 +88,27 @@ public class MostFrequentTest {
     @Test public void array1k() {
         // arrange
         final int zeroes = 1_000;
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent want = new edu.hm.gaertner.simon.lab23.a511.MostFrequent(0, zeroes);
+        final MostFrequent want = new MostFrequent(0, zeroes);
         final int[] array = new int[zeroes];
 
         // act
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent have = edu.hm.gaertner.simon.lab23.a511.MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.scan(array);
 
         // assert
         assertEquals(want, have);
     }
 
     @Test(expected = IllegalArgumentException.class) public void newObjectWithOccurrenceLessThan1(){
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent have = new edu.hm.gaertner.simon.lab23.a511.MostFrequent(0, 0);
+        final MostFrequent have = new MostFrequent(0, 0);
     }
 
     @Test(expected = NullPointerException.class) public void scanWithNullArray(){
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent have = edu.hm.gaertner.simon.lab23.a511.MostFrequent.scan(null);
+        final MostFrequent have = MostFrequent.scan(null);
     }
 
     @Test(expected = NoSuchElementException.class) public void scanWithArrayLength0(){
         final int[] array = new int[0];
-        final edu.hm.gaertner.simon.lab23.a511.MostFrequent have = MostFrequent.scan(array);
+        final MostFrequent have = MostFrequent.scan(array);
     }
 
     /*
