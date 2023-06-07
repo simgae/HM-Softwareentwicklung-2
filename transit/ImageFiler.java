@@ -10,6 +10,10 @@ import java.util.stream.IntStream;
 public record ImageFiler(String filenameFormat, ColorMap colorMap) {
     private final static Path imageDir = Path.of(System.getProperty("java.io.tmpdir"));
 
+    static {
+        System.out.println("system temp directory: " + imageDir);
+    }
+
     public void save(int index,  int[][] loops) throws IOException {
         int height = loops[0].length;
         int width = loops.length;
