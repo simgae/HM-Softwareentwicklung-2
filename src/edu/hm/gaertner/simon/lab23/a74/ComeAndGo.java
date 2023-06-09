@@ -1,4 +1,8 @@
-public record ComeAndGo() {
+package edu.hm.gaertner.simon.lab23.a74;
+
+import java.io.Closeable;
+
+public record ComeAndGo() implements Closeable {
     public ComeAndGo {
         System.out.println("Oh, hi, it's you!");
     }
@@ -7,6 +11,7 @@ public record ComeAndGo() {
         System.out.println(message + " - that's nice :)");
     }
 
+    @Override
     public void close() {
         System.out.println("Farewell!");
     }
@@ -14,8 +19,9 @@ public record ComeAndGo() {
 
 class ComeAndGoMain {
     public static void main(String... args) {
-        ComeAndGo comeAndGo = new ComeAndGo();
-        comeAndGo.talk("hello!");
-        comeAndGo.close();
+
+        try(ComeAndGo comeAndGo = new ComeAndGo()){
+            comeAndGo.talk("hello!");
+        }
     }
 }

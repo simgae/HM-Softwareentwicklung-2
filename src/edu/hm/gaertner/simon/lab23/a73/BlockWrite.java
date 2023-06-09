@@ -1,3 +1,5 @@
+package edu.hm.gaertner.simon.lab23.a73;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -7,7 +9,10 @@ public class BlockWrite {
         String tempfileName = Path.of(System.getProperty("java.io.tmpdir")).resolve("zero").toString();
         int totalChars = 1 << 28; // ~256 MByte
 
-            int blocksize = 1;
+        int blocksize = 1;
+
+        while(blocksize <= totalChars) {
+
             int numBlocks = totalChars/blocksize;
             char[] block = new char[blocksize];
             long startMillis = System.currentTimeMillis();
@@ -17,5 +22,8 @@ public class BlockWrite {
             }
             System.out.println("blocksize: " + blocksize);
             System.out.println("elapsed: " + (System.currentTimeMillis() - startMillis));
+
+            blocksize *= 2;
+        }
     }
 }
