@@ -1,3 +1,5 @@
+package edu.hm.gaertner.simon.lab23.a80;
+
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import org.junit.Rule;

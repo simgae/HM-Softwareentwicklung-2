@@ -1,3 +1,5 @@
+package edu.hm.gaertner.simon.lab23.a80;
+
 /** Ein Entschluessler.
  * @author R. Schiedermeier, rs@cs.hm.edu
  * @version 2023-06-16
