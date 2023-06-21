@@ -1,3 +1,5 @@
+package edu.hm.gaertner.simon.lab23.a63;
+
 /** Eine Funktion, die aus Geradenstuecken besteht.
  * @version 2023-05-31
  * @param xy Abwechselnd x und y von Stuetzstellen.

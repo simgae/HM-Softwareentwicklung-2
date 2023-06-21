@@ -1,3 +1,5 @@
+package edu.hm.gaertner.simon.lab23.a63;
+
 import java.util.stream.IntStream;
 
 /**

@@ -1,3 +1,5 @@
+package edu.hm.gaertner.simon.lab23.a63;
+
 /**
  * @version 2023-06-01
  */

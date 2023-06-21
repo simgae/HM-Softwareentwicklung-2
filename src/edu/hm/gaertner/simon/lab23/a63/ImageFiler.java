@@ -1,3 +1,5 @@
+package edu.hm.gaertner.simon.lab23.a63;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;

@@ -1,3 +1,5 @@
+package edu.hm.gaertner.simon.lab23.a63;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -15,12 +17,12 @@ public abstract class Julia {
     public static final int CORES = Runtime.getRuntime().availableProcessors();
 
     static Julia make() {
-        return new Julia1();
+        return new JuliaJobs();
     }
 
     public static void main(String... args) throws IOException, ReflectiveOperationException, InterruptedException {
-        final int pixelX = 800; // Bildbreite (Pixel)
-        final int pixelY = 600; // Bildhoehe (Pixel)
+        final int pixelX = 4096; // Bildbreite (Pixel)
+        final int pixelY = 3072; // Bildhoehe (Pixel)
         final Complex center = Complex.make(0, 0);
         final double width = 4; // Breite des Ausschnitts
 
