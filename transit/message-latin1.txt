@@ -1,0 +1,1 @@
+Das ist eine Nachricht mit allen deutschen Umlauten, das heißt ä, ö, ü, Ä, Ö, Ü und ß.
