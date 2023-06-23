@@ -1,4 +1,4 @@
-package p623;
+package edu.hm.gaertner.simon.lab23.a91;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -17,5 +17,15 @@ public class Recoder {
 
         FileWithEncoding input = new FileWithEncoding(args[0].split(":"));
         FileWithEncoding output = new FileWithEncoding(args[1].split(":"));
+
+
+        try(InputStream inputStream = new FileInputStream(input.fileName);
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream, input.charset);
+            OutputStream outputStream = new FileOutputStream(output.fileName);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, output.charset)){
+
+            inputStreamReader.transferTo(outputStreamWriter);
+
+        }
     }
 }
